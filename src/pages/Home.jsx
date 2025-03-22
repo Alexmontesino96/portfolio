@@ -83,11 +83,11 @@ function Home() {
       <div className="px-4 sm:px-10 md:px-20 lg:px-40 flex flex-1 justify-center py-6 sm:py-10">
         <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
           <div className="flex min-h-[90vh] sm:min-h-0 items-center p-4 pt-0 sm:p-6 @container mb-6 sm:mb-8 md:mb-14" id="about">
-            <div className="flex w-full flex-col gap-6 mt-26 sm:mt-0 @[520px]:flex-row @[520px]:justify-between @[520px]:items-center">
+            <div className="flex w-full flex-col gap-6 mt-16 sm:mt-0 @[520px]:flex-row @[520px]:justify-between @[520px]:items-center">
               <div className="flex flex-col sm:flex-row gap-6 items-center">
                 <div
                   ref={profileRef}
-                  className="min-h-[180px] w-[180px] sm:min-h-48 sm:w-48 rounded-full overflow-hidden shadow-lg hover:scale-105 hover:shadow-[0_0_15px_rgba(var(--violet-9-rgb),0.4)] transition-all duration-300 cursor-pointer flex-shrink-0 mb-0 sm:mb-0 -mt-30 sm:mt-0 border-2 border-transparent"
+                  className="min-h-[180px] w-[180px] sm:min-h-48 sm:w-48 rounded-full overflow-hidden shadow-lg hover:scale-105 hover:shadow-[0_0_15px_rgba(var(--violet-9-rgb),0.4)] transition-all duration-300 cursor-pointer flex-shrink-0 mb-0 sm:mb-0 -mt-10 sm:mt-0 border-2 border-transparent"
                   style={{
                     transformOrigin: 'center center',
                     transition: 'transform 0.5s ease, opacity 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease'
