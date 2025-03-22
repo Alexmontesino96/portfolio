@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function Home() {
   const [scrollY, setScrollY] = useState(0);
   const profileRef = useRef(null);
-  const projectRefs = [useRef(null), useRef(null), useRef(null)];
+  const projectRefs = [useRef(null), useRef(null), useRef(null), useRef(null), useRef(null), useRef(null)];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,38 +39,43 @@ function Home() {
         }
       }
 
-      // Animar las tarjetas de proyectos en móviles
-      if (window.innerWidth < 640) {
-        projectRefs.forEach((ref, index) => {
-          if (ref.current) {
-            const elementRect = ref.current.getBoundingClientRect();
-            const elementTop = elementRect.top;
-            const elementHeight = elementRect.height;
+      // Animar las tarjetas de proyectos en todas las pantallas, no solo en móviles
+      projectRefs.forEach((ref, index) => {
+        if (ref.current) {
+          const elementRect = ref.current.getBoundingClientRect();
+          const elementTop = elementRect.top;
+          const elementHeight = elementRect.height;
+          const viewportHeight = window.innerHeight;
+          
+          // Activar el efecto cuando la tarjeta está visible en el viewport
+          // Consideramos que está visible cuando al menos 20% de la tarjeta está en la pantalla
+          // y no ha salido más del 80% por la parte superior
+          const visibleThresholdTop = viewportHeight * 0.8;
+          const visibleThresholdBottom = -elementHeight * 0.8;
+          
+          if (elementTop < visibleThresholdTop && elementTop > visibleThresholdBottom) {
+            // Calculamos qué tan centrada está la tarjeta en la pantalla
+            // 0 = borde superior/inferior, 1 = perfectamente centrada
+            const distanceFromCenter = 1 - Math.abs((elementTop + elementHeight/2 - viewportHeight/2) / (viewportHeight/2 + elementHeight/2));
+            const scaleValue = 1 + Math.min(0.08, 0.08 * distanceFromCenter);
             
-            // Calcular cuando la tarjeta está cerca del borde superior
-            // Se activa cuando la tarjeta está entrando en la pantalla (entre -20% y 30% de su altura)
-            const activationThresholdTop = -0.2 * elementHeight;
-            const activationThresholdBottom = 0.3 * elementHeight;
-            
-            if (elementTop <= activationThresholdBottom && elementTop >= activationThresholdTop) {
-              // La tarjeta está en la zona de activación cerca del borde superior
-              const distanceFactor = Math.abs((elementTop - activationThresholdTop) / (activationThresholdBottom - activationThresholdTop));
-              const scaleValue = 1 + Math.min(0.08, 0.08 * distanceFactor);
-              
-              ref.current.style.transform = `scale(${scaleValue})`;
-              ref.current.style.zIndex = '40';
-              ref.current.style.borderColor = 'var(--violet-9)';
-              ref.current.style.boxShadow = '0 0 15px rgba(var(--violet-9-rgb),0.3)';
-            } else {
-              // Reset cuando la tarjeta está fuera de la zona de activación
-              ref.current.style.transform = 'scale(1)';
-              ref.current.style.zIndex = 'auto';
-              ref.current.style.borderColor = '#293038';
-              ref.current.style.boxShadow = '';
-            }
+            ref.current.style.transform = `scale(${scaleValue})`;
+            ref.current.style.zIndex = '40';
+            ref.current.style.borderColor = 'var(--violet-9)';
+            ref.current.style.boxShadow = '0 0 15px rgba(var(--violet-9-rgb),0.3)';
+            // Aseguramos que la transición se aplique siempre
+            ref.current.style.transition = 'transform 0.4s ease-out, border-color 0.4s ease, box-shadow 0.4s ease';
+          } else {
+            // Reset cuando la tarjeta está fuera de la zona de activación
+            ref.current.style.transform = 'scale(1)';
+            ref.current.style.zIndex = 'auto';
+            ref.current.style.borderColor = '#293038';
+            ref.current.style.boxShadow = '';
+            // Mantenemos la transición en el reset
+            ref.current.style.transition = 'transform 0.4s ease-out, border-color 0.4s ease, box-shadow 0.4s ease';
           }
-        });
-      }
+        }
+      });
     };
 
     // Ejecutar una vez cuando el componente se monta para aplicar efectos iniciales
@@ -194,6 +199,7 @@ function Home() {
             </Link>
             <Link to="/project/financial-family-telegram-bot" className="flex flex-col gap-4 pb-3 group">
               <div
+                ref={projectRefs[2]}
                 className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl transform group-hover:scale-[1.02] transition-all duration-300 border border-[#293038] group-hover:border-[--violet-9] shadow-lg"
                 style={{
                   backgroundImage: 'url("/telegra_bot_financial_family.webp")',
@@ -291,6 +297,7 @@ function Home() {
             
             <a href="https://github.com/Alexmontesino96/DetailsFoodScanner" target="_blank" className="flex flex-col gap-4 pb-3 group">
               <div
+                ref={projectRefs[3]}
                 className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl transform group-hover:scale-[1.02] transition-all duration-300 border border-[#293038] group-hover:border-[--violet-9] shadow-lg"
                 style={{
                   backgroundImage: 'url("/detail_food_scanner.webp")',
@@ -306,6 +313,7 @@ function Home() {
             
             <a href="https://github.com/Alexmontesino96/api-citas-medicas-main" target="_blank" className="flex flex-col gap-4 pb-3 group">
               <div
+                ref={projectRefs[4]}
                 className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl transform group-hover:scale-[1.02] transition-all duration-300 border border-[#293038] group-hover:border-[--violet-9] shadow-lg"
                 style={{
                   backgroundImage: 'url("/api_medical.webp")',
