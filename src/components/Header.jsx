@@ -59,29 +59,22 @@ function Header() {
           <Link to="/contact" className={`${isDarkMode ? 'text-white hover:text-[--violet-9]' : 'text-[#111418] hover:text-[--violet-9]'} text-sm font-medium leading-normal transition-colors`}>Contact</Link>
         </div>
         <div className="flex gap-2">
-          {isDarkMode ? (
-            <button
-              onClick={toggleTheme}
-              className="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#293038] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5 hover:bg-[--violet-9] transition-colors"
-              aria-label="Cambiar a modo claro"
-            >
-              <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7.52.93c-.21-.296-.683-.296-.891 0l-6.157 8.26c-.228.304-.053.724.304.724h2.917v5.097c0 .268.14.532.395.595.41.1.824-.118.824-.595V9.914h4.235v5.097c0 .268.14.532.394.595.41.1.824-.118.824-.595V9.914h2.918c.356 0 .531-.422.303-.724L7.52.929z"></path>
+          <button
+            className={`p-2 rounded-md flex items-center gap-2 transition-all ${isDarkMode ? 'bg-[#21262D] text-white hover:bg-[#30363D]' : 'bg-[#F0F0F0] hover:bg-[#E0E0E0]'}`}
+            onClick={() => setIsDarkMode(!isDarkMode)}
+            aria-label={isDarkMode ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
+          >
+            {isDarkMode ? (
+              <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                <path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"></path>
               </svg>
-              <span className="text-sm">Modo claro</span>
-            </button>
-          ) : (
-            <button
-              onClick={toggleTheme}
-              className="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#e0e0e0] text-[#111418] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5 hover:bg-[--violet-9] hover:text-white transition-colors"
-              aria-label="Cambiar a modo oscuro"
-            >
-              <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
+            ) : (
+              <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                <path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"></path>
               </svg>
-              <span className="text-sm">Modo oscuro</span>
-            </button>
-          )}
+            )}
+            <span className="text-sm">{isDarkMode ? "Modo claro" : "Modo oscuro"}</span>
+          </button>
         </div>
         <div
           className="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
@@ -115,7 +108,15 @@ function Header() {
             ? 'rgba(13, 17, 23, 0.98)' 
             : 'rgba(245, 245, 245, 0.98)',
           backdropFilter: isMenuOpen ? 'blur(10px)' : 'none',
-          WebkitBackdropFilter: isMenuOpen ? 'blur(10px)' : 'none'
+          WebkitBackdropFilter: isMenuOpen ? 'blur(10px)' : 'none',
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          width: '100vw',
+          height: '100vh',
+          zIndex: 40
         }}
         onClick={(e) => {
           // Cerrar el menú al tocar el fondo
@@ -127,7 +128,7 @@ function Header() {
         <nav className="flex flex-col items-center gap-8 py-8">
           <Link 
             to="/about" 
-            className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} text-xl font-medium hover:text-[--violet-9] transition-colors py-2 px-4 active:opacity-70 touch-manipulation`}
+            className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} text-xl font-medium hover:text-[--violet-9] transition-colors py-4 px-8 active:opacity-70 touch-manipulation rounded-xl ${isDarkMode ? 'bg-[#161B22]/50' : 'bg-white/20'}`}
             onClick={() => setIsMenuOpen(false)}
             style={{ WebkitTapHighlightColor: 'transparent' }}
           >
@@ -135,7 +136,7 @@ function Header() {
           </Link>
           <Link 
             to="/projects" 
-            className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} text-xl font-medium hover:text-[--violet-9] transition-colors py-2 px-4 active:opacity-70 touch-manipulation`}
+            className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} text-xl font-medium hover:text-[--violet-9] transition-colors py-4 px-8 active:opacity-70 touch-manipulation rounded-xl ${isDarkMode ? 'bg-[#161B22]/50' : 'bg-white/20'}`}
             onClick={() => setIsMenuOpen(false)}
             style={{ WebkitTapHighlightColor: 'transparent' }}
           >
@@ -143,7 +144,7 @@ function Header() {
           </Link>
           <Link 
             to="/contact" 
-            className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} text-xl font-medium hover:text-[--violet-9] transition-colors py-2 px-4 active:opacity-70 touch-manipulation`}
+            className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} text-xl font-medium hover:text-[--violet-9] transition-colors py-4 px-8 active:opacity-70 touch-manipulation rounded-xl ${isDarkMode ? 'bg-[#161B22]/50' : 'bg-white/20'}`}
             onClick={() => setIsMenuOpen(false)}
             style={{ WebkitTapHighlightColor: 'transparent' }}
           >
@@ -163,11 +164,11 @@ function Header() {
               style={{ WebkitTapHighlightColor: 'transparent' }}
             >
               {isDarkMode ? (
-                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                  <path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"></path>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                 </svg>
               ) : (
-                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"
                   ></path>
                 </svg>
