@@ -171,7 +171,7 @@ function Home() {
             </Link>
             <Link to="/project/gym-api" className="flex flex-col gap-4 pb-3 group">
               <div
-                ref={projectRefs[2]}
+                ref={projectRefs[1]}
                 className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl transform group-hover:scale-[1.02] transition-all duration-300 border border-[#293038] group-hover:border-[--violet-9] shadow-lg"
                 style={{
                   backgroundImage: 'url("/gym_api_photo.webp")',
@@ -268,7 +268,7 @@ function Home() {
           <div className="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-5 p-6 mb-16">
             <Link to="/project/supplies-order-predict" className="flex flex-col gap-4 pb-3 group">
               <div
-                ref={projectRefs[0]}
+                ref={projectRefs[3]}
                 className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl transform group-hover:scale-[1.02] transition-all duration-300 border border-[#293038] group-hover:border-[--violet-9] shadow-lg"
                 style={{
                   backgroundImage: 'url("/order_predict.webp")',
@@ -284,7 +284,7 @@ function Home() {
             
             <a href="https://github.com/Alexmontesino96/DetailsFoodScanner" target="_blank" className="flex flex-col gap-4 pb-3 group">
               <div
-                ref={projectRefs[3]}
+                ref={projectRefs[4]}
                 className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl transform group-hover:scale-[1.02] transition-all duration-300 border border-[#293038] group-hover:border-[--violet-9] shadow-lg"
                 style={{
                   backgroundImage: 'url("/detail_food_scanner.webp")',
@@ -300,7 +300,7 @@ function Home() {
             
             <a href="https://github.com/Alexmontesino96/api-citas-medicas-main" target="_blank" className="flex flex-col gap-4 pb-3 group">
               <div
-                ref={projectRefs[4]}
+                ref={projectRefs[5]}
                 className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl transform group-hover:scale-[1.02] transition-all duration-300 border border-[#293038] group-hover:border-[--violet-9] shadow-lg"
                 style={{
                   backgroundImage: 'url("/api_medical.webp")',
