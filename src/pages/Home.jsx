@@ -18,27 +18,30 @@ function Home() {
         
         // Calcular cuando la imagen está cerca del borde superior
         // Se activa cuando está entrando en la pantalla (entre -20% y 30% de su altura)
-        const activationThresholdTop = -0.2 * elementHeight;
-        const activationThresholdBottom = 0.3 * elementHeight;
+        const activationThresholdTop = -0.3 * elementHeight;
+        const activationThresholdBottom = 0.5 * elementHeight;
         
-        // Solo activamos el efecto si no está demasiado cerca del header (al menos 70px desde la parte superior)
-        if (elementTop <= activationThresholdBottom && elementTop >= activationThresholdTop && elementTop > 70) {
+        // Solo activamos el efecto si no está demasiado cerca del header (al menos 50px desde la parte superior)
+        if (elementTop <= activationThresholdBottom && elementTop >= activationThresholdTop && elementTop > 50) {
           // La imagen está en la zona de activación cerca del borde superior
           const distanceFactor = Math.abs((elementTop - activationThresholdTop) / (activationThresholdBottom - activationThresholdTop));
           // Escala de encogimiento: mayor en móviles, más sutil en pantallas grandes
-          const maxShrink = window.innerWidth < 640 ? 0.25 : 0.15;
+          const maxShrink = window.innerWidth < 640 ? 0.35 : 0.25;
           const scaleValue = 1 - Math.min(maxShrink, maxShrink * distanceFactor);
           // Pequeña rotación para hacer más visible el efecto
-          const rotateValue = Math.min(5, 5 * distanceFactor);
+          const rotateValue = Math.min(8, 8 * distanceFactor);
           // Ligero desplazamiento hacia arriba
-          const translateY = Math.min(-10, -10 * distanceFactor);
+          const translateY = Math.min(-15, -15 * distanceFactor);
           
           profileRef.current.style.transform = `scale(${scaleValue}) rotate(${rotateValue}deg) translateY(${translateY}px)`;
           profileRef.current.style.zIndex = '40'; // Reducido de 50 a 40 para estar bajo el header
           profileRef.current.style.borderColor = 'var(--violet-9)';
-          profileRef.current.style.boxShadow = '0 0 25px rgba(var(--violet-9-rgb),0.6)';
+          profileRef.current.style.boxShadow = '0 0 30px rgba(var(--violet-9-rgb),0.7)';
           // Agregar un filtro de brillo sutil
-          profileRef.current.style.filter = 'brightness(1.1)';
+          profileRef.current.style.filter = 'brightness(1.2)';
+          
+          // Añadir log para depuración
+          console.log('Efecto aplicado:', {elementTop, scaleValue, rotateValue, translateY});
         } else {
           // Reset cuando la imagen está fuera de la zona de activación
           profileRef.current.style.transform = 'scale(1) rotate(0deg) translateY(0)';
@@ -83,6 +86,9 @@ function Home() {
       }
     };
 
+    // Ejecutar una vez cuando el componente se monta para aplicar efectos iniciales
+    handleScroll();
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -100,7 +106,7 @@ function Home() {
                     className="min-h-[220px] w-[220px] sm:min-h-48 sm:w-48 rounded-full overflow-hidden shadow-lg transition-all duration-300 cursor-pointer flex-shrink-0 border-2 border-transparent"
                     style={{
                       transformOrigin: 'center top',
-                      transition: 'transform 0.3s ease-out, opacity 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease'
+                      transition: 'transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease'
                     }}
                   >
                     <img 
