@@ -83,7 +83,7 @@ function Home() {
       <div className="px-4 sm:px-10 md:px-20 lg:px-40 flex flex-1 justify-center py-6 sm:py-10">
         <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
           <div className="flex min-h-[90vh] sm:min-h-0 items-center p-4 pt-0 sm:p-6 @container mb-6 sm:mb-8 md:mb-14" id="about">
-            <div className="flex w-full flex-col gap-6 mt-8 sm:mt-0 @[520px]:flex-row @[520px]:justify-between @[520px]:items-center">
+            <div className="flex w-full flex-col gap-6 mt-16 sm:mt-0 @[520px]:flex-row @[520px]:justify-between @[520px]:items-center">
               <div className="flex flex-col sm:flex-row gap-6 items-center">
                 <div
                   ref={profileRef}
@@ -102,10 +102,10 @@ function Home() {
                 <div className="flex flex-col justify-center text-center sm:text-left my-auto sm:ml-8">
                   <p className="text-white text-[30px] sm:text-[28px] font-bold leading-tight tracking-[-0.015em] mb-2 sm:mb-1">Alex Montesino</p>
                   <p className="text-[#9dabb8] text-xl sm:text-xl font-normal leading-normal mb-4 sm:mb-3">Backend Developer | API Specialist</p>
-                  <p className="text-[--violet-9] text-lg sm:text-sm font-medium mb-6 sm:mb-0">&gt; Transforming ideas into scalable solutions</p>
+                  <p className="text-[--violet-9] text-lg sm:text-sm font-medium mb-2 sm:mb-0">&gt; Transforming ideas into scalable solutions</p>
                 </div>
               </div>
-              <div className="flex flex-row sm:flex-col items-center justify-center gap-4 sm:gap-3 mt-4 sm:mt-0">
+              <div className="flex flex-row sm:flex-col items-center justify-center gap-4 sm:gap-3 mt-2 sm:mt-0">
                 <a 
                   href="https://www.linkedin.com/in/alex-montesino-03797b1b0/" 
                   target="_blank"
