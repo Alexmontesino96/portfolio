@@ -10,8 +10,8 @@ function Home() {
     const handleScroll = () => {
       setScrollY(window.scrollY);
       
-      // Animar la imagen de perfil en móviles
-      if (window.innerWidth < 640 && profileRef.current) {
+      // Animar la imagen de perfil
+      if (profileRef.current) {
         const elementRect = profileRef.current.getBoundingClientRect();
         const elementTop = elementRect.top;
         const elementHeight = elementRect.height;
@@ -25,7 +25,9 @@ function Home() {
         if (elementTop <= activationThresholdBottom && elementTop >= activationThresholdTop && elementTop > 70) {
           // La imagen está en la zona de activación cerca del borde superior
           const distanceFactor = Math.abs((elementTop - activationThresholdTop) / (activationThresholdBottom - activationThresholdTop));
-          const scaleValue = 1 + Math.min(0.08, 0.08 * distanceFactor);
+          // Escala de encogimiento: mayor en móviles, más sutil en pantallas grandes
+          const maxShrink = window.innerWidth < 640 ? 0.15 : 0.08;
+          const scaleValue = 1 - Math.min(maxShrink, maxShrink * distanceFactor);
           
           profileRef.current.style.transform = `scale(${scaleValue})`;
           profileRef.current.style.zIndex = '40'; // Reducido de 50 a 40 para estar bajo el header
@@ -88,9 +90,9 @@ function Home() {
                 <div className="flex justify-center w-full sm:w-auto mb-6 sm:mb-0">
                   <div
                     ref={profileRef}
-                    className="min-h-[220px] w-[220px] sm:min-h-48 sm:w-48 rounded-full overflow-hidden shadow-lg hover:scale-105 hover:shadow-[0_0_15px_rgba(var(--violet-9-rgb),0.4)] transition-all duration-300 cursor-pointer flex-shrink-0 border-2 border-transparent"
+                    className="min-h-[220px] w-[220px] sm:min-h-48 sm:w-48 rounded-full overflow-hidden shadow-lg transition-all duration-300 cursor-pointer flex-shrink-0 border-2 border-transparent"
                     style={{
-                      transformOrigin: 'center center',
+                      transformOrigin: 'center top',
                       transition: 'transform 0.5s ease, opacity 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease'
                     }}
                   >

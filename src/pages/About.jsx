@@ -1,9 +1,49 @@
-import { useContext } from 'react';
+import { useContext, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ThemeContext } from '../App';
 
 function About() {
   const { isDarkMode } = useContext(ThemeContext);
+  const profileRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Animar la imagen de perfil
+      if (profileRef.current) {
+        const elementRect = profileRef.current.getBoundingClientRect();
+        const elementTop = elementRect.top;
+        const elementHeight = elementRect.height;
+        
+        // Calcular cuando la imagen está cerca del borde superior
+        // Se activa cuando está entrando en la pantalla (entre -20% y 30% de su altura)
+        const activationThresholdTop = -0.2 * elementHeight;
+        const activationThresholdBottom = 0.3 * elementHeight;
+        
+        // Solo activamos el efecto si no está demasiado cerca del header (al menos 70px desde la parte superior)
+        if (elementTop <= activationThresholdBottom && elementTop >= activationThresholdTop && elementTop > 70) {
+          // La imagen está en la zona de activación cerca del borde superior
+          const distanceFactor = Math.abs((elementTop - activationThresholdTop) / (activationThresholdBottom - activationThresholdTop));
+          // Escala de encogimiento: mayor en móviles, más sutil en pantallas grandes
+          const maxShrink = window.innerWidth < 640 ? 0.15 : 0.08;
+          const scaleValue = 1 - Math.min(maxShrink, maxShrink * distanceFactor);
+          
+          profileRef.current.style.transform = `scale(${scaleValue})`;
+          profileRef.current.style.zIndex = '40';
+          profileRef.current.style.borderColor = 'var(--violet-9)';
+          profileRef.current.style.boxShadow = '0 0 20px rgba(var(--violet-9-rgb),0.4)';
+        } else {
+          // Reset cuando la imagen está fuera de la zona de activación
+          profileRef.current.style.transform = 'scale(1)';
+          profileRef.current.style.zIndex = 'auto';
+          profileRef.current.style.borderColor = 'transparent';
+          profileRef.current.style.boxShadow = '';
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <div className="px-4 sm:px-6 md:px-10 lg:px-20 xl:px-40 flex flex-1 justify-center py-10">
@@ -16,9 +56,10 @@ function About() {
           <div className="md:col-span-1">
             <div className="flex justify-center mb-6 md:mb-4">
               <div
-                className="min-h-44 w-44 sm:min-h-48 sm:w-48 rounded-full overflow-hidden shadow-lg hover:scale-105 hover:shadow-[0_0_15px_rgba(var(--violet-9-rgb),0.4)] transition-all duration-300 cursor-pointer flex-shrink-0 border-2 border-transparent hover:border-[--violet-9]"
+                ref={profileRef}
+                className="min-h-44 w-44 sm:min-h-48 sm:w-48 rounded-full overflow-hidden shadow-lg transition-all duration-300 cursor-pointer flex-shrink-0 border-2 border-transparent"
                 style={{
-                  transformOrigin: 'center center',
+                  transformOrigin: 'center top',
                   transition: 'transform 0.5s ease, opacity 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease'
                 }}
               >
