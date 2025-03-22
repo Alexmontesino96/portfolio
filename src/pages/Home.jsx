@@ -101,7 +101,7 @@ function Home() {
                 <div className="flex flex-col justify-center text-center sm:text-left my-auto sm:ml-8">
                   <p className="text-white text-[28px] font-bold leading-tight tracking-[-0.015em] mb-1">Alex Montesino</p>
                   <p className="text-[#9dabb8] text-xl font-normal leading-normal mb-3">Backend Developer | API Specialist</p>
-                  <p className="text-[#3B82F6] text-sm font-medium">&gt; Transforming ideas into scalable solutions</p>
+                  <p className="text-[--violet-9] text-sm font-medium">&gt; Transforming ideas into scalable solutions</p>
                 </div>
               </div>
               <div className="flex flex-col items-center">
@@ -183,7 +183,7 @@ function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Backend & Data */}
               <div className="bg-[#161B22] rounded-xl p-4 shadow-md border border-[#293038]">
-                <h3 className="text-[#3B82F6] text-lg font-bold mb-3 border-b border-[#293038] pb-2">Backend</h3>
+                <h3 className="text-[--violet-9] text-lg font-bold mb-3 border-b border-[#293038] pb-2">Backend</h3>
                 <div className="flex flex-wrap gap-2">
                   <span className="inline-block px-3 py-1 bg-[#293038] text-white text-sm rounded-lg">Python</span>
                   <span className="inline-block px-3 py-1 bg-[#293038] text-white text-sm rounded-lg">FastAPI</span>
@@ -195,7 +195,7 @@ function Home() {
               </div>
               
               <div className="bg-[#161B22] rounded-xl p-4 shadow-md border border-[#293038]">
-                <h3 className="text-[#3B82F6] text-lg font-bold mb-3 border-b border-[#293038] pb-2">Data</h3>
+                <h3 className="text-[--violet-9] text-lg font-bold mb-3 border-b border-[#293038] pb-2">Data</h3>
                 <div className="flex flex-wrap gap-2">
                   <span className="inline-block px-3 py-1 bg-[#293038] text-white text-sm rounded-lg">SQL</span>
                   <span className="inline-block px-3 py-1 bg-[#293038] text-white text-sm rounded-lg">PostgreSQL</span>
@@ -208,7 +208,7 @@ function Home() {
               
               {/* DevOps & Security */}
               <div className="bg-[#161B22] rounded-xl p-4 shadow-md border border-[#293038]">
-                <h3 className="text-[#3B82F6] text-lg font-bold mb-3 border-b border-[#293038] pb-2">DevOps</h3>
+                <h3 className="text-[--violet-9] text-lg font-bold mb-3 border-b border-[#293038] pb-2">DevOps</h3>
                 <div className="flex flex-wrap gap-2">
                   <span className="inline-block px-3 py-1 bg-[#293038] text-white text-sm rounded-lg">Docker</span>
                   <span className="inline-block px-3 py-1 bg-[#293038] text-white text-sm rounded-lg">Kubernetes</span>
@@ -220,7 +220,7 @@ function Home() {
               </div>
               
               <div className="bg-[#161B22] rounded-xl p-4 shadow-md border border-[#293038]">
-                <h3 className="text-[#3B82F6] text-lg font-bold mb-3 border-b border-[#293038] pb-2">Security</h3>
+                <h3 className="text-[--violet-9] text-lg font-bold mb-3 border-b border-[#293038] pb-2">Security</h3>
                 <div className="flex flex-wrap gap-2">
                   <span className="inline-block px-3 py-1 bg-[#293038] text-white text-sm rounded-lg">JWT</span>
                   <span className="inline-block px-3 py-1 bg-[#293038] text-white text-sm rounded-lg">OAuth 2.0</span>
