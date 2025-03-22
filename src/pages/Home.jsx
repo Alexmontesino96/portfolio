@@ -87,7 +87,7 @@ function Home() {
               <div className="flex flex-col sm:flex-row gap-6 items-center">
                 <div
                   ref={profileRef}
-                  className="min-h-[180px] w-[180px] sm:min-h-48 sm:w-48 rounded-full overflow-hidden shadow-lg hover:scale-105 hover:shadow-[0_0_15px_rgba(var(--violet-9-rgb),0.4)] transition-all duration-300 cursor-pointer flex-shrink-0 mb-0 sm:mb-0 -mt-10 sm:mt-0 border-2 border-transparent"
+                  className="min-h-[180px] w-[180px] sm:min-h-48 sm:w-48 rounded-full overflow-hidden shadow-lg hover:scale-105 hover:shadow-[0_0_15px_rgba(var(--violet-9-rgb),0.4)] transition-all duration-300 cursor-pointer flex-shrink-0 mb-0 sm:mb-0 -mt-30 sm:mt-0 border-2 border-transparent"
                   style={{
                     transformOrigin: 'center center',
                     transition: 'transform 0.5s ease, opacity 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease'
