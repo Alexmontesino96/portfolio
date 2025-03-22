@@ -8,33 +8,21 @@ function About() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Animar la imagen de perfil
+      // Animar la imagen de perfil con un efecto más sutil
       if (profileRef.current) {
         const elementRect = profileRef.current.getBoundingClientRect();
         const elementTop = elementRect.top;
-        const elementHeight = elementRect.height;
+        const viewportHeight = window.innerHeight;
         
-        // Definimos una zona de activación más amplia para el efecto
-        const activationThresholdTop = -0.5 * elementHeight;
-        const activationThresholdBottom = 0.8 * elementHeight;
+        // Calculamos qué tan centrada está la imagen en la pantalla
+        // Valor máximo cuando está en el centro, disminuye hacia los extremos
+        const distanceFromCenter = 1 - Math.min(1, Math.abs(elementTop - viewportHeight * 0.4) / (viewportHeight * 0.5));
         
-        // Solo activamos el efecto si no está demasiado cerca del header
-        if (elementTop <= activationThresholdBottom && elementTop >= activationThresholdTop && elementTop > 50) {
-          // Calculamos un factor de distancia entre 0 y 1
-          const distanceFactor = Math.abs((elementTop - activationThresholdTop) / (activationThresholdBottom - activationThresholdTop));
-          
-          // A medida que bajamos en la página, el factor aumenta y la imagen crece
-          const maxGrowth = window.innerWidth < 640 ? 0.2 : 0.15;
-          const scaleValue = 1 + Math.min(maxGrowth, maxGrowth * distanceFactor);
-          
-          // Aplicamos solo la escala, sin rotación ni desplazamiento
-          profileRef.current.style.transform = `scale(${scaleValue})`;
-          
-          // No aplicamos otros efectos visuales como colores o sombras
-        } else {
-          // Reset cuando la imagen está fuera de la zona de activación
-          profileRef.current.style.transform = 'scale(1)';
-        }
+        // Efecto de escala sutil, evitando valores extremos
+        const scaleValue = 1 + Math.min(0.08, 0.08 * distanceFromCenter);
+        
+        // Aplicamos la escala con una transición muy suave
+        profileRef.current.style.transform = `scale(${scaleValue})`;
       }
     };
 
@@ -60,8 +48,7 @@ function About() {
                 className="min-h-44 w-44 sm:min-h-48 sm:w-48 rounded-full overflow-hidden shadow-lg transition-all duration-300 cursor-pointer flex-shrink-0 border-2 border-transparent"
                 style={{
                   transformOrigin: 'center center',
-                  transition: 'transform 0.3s ease-out',
-                  margin: '5px 5px 10px 5px'
+                  transition: 'transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1)'
                 }}
               >
                 <img 

@@ -104,7 +104,19 @@ function Header() {
       </div>
       
       {/* Menú móvil */}
-      <div className={`fixed inset-0 ${isDarkMode ? 'bg-[#0D1117]/95' : 'bg-[#f5f5f5]/95'} backdrop-blur-md z-40 transition-all duration-300 flex flex-col pt-20 px-6 md:hidden ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
+      <div 
+        className={`fixed inset-0 backdrop-blur-lg z-40 transition-all duration-300 flex flex-col pt-20 px-6 md:hidden ${
+          isMenuOpen 
+            ? 'opacity-100 visible' 
+            : 'opacity-0 invisible pointer-events-none'
+        }`}
+        style={{
+          backgroundColor: isDarkMode 
+            ? 'rgba(13, 17, 23, 0.98)' 
+            : 'rgba(245, 245, 245, 0.98)',
+          backdropFilter: 'blur(10px)'
+        }}
+      >
         <nav className="flex flex-col items-center gap-8 py-8">
           <Link 
             to="/about" 
