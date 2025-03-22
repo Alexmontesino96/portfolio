@@ -82,36 +82,62 @@ function Home() {
     <>
       <div className="px-4 sm:px-10 md:px-20 lg:px-40 flex flex-1 justify-center py-6 sm:py-10">
         <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
-          <div className="flex min-h-[90vh] sm:min-h-0 items-center p-4 pt-0 sm:p-6 @container mb-6 sm:mb-8 md:mb-14" id="about">
-            <div className="flex w-full flex-col gap-6 mt-16 sm:mt-0 @[520px]:flex-row @[520px]:justify-between @[520px]:items-center">
-              <div className="flex flex-col sm:flex-row gap-6 items-center">
-                <div
-                  ref={profileRef}
-                  className="min-h-[180px] w-[180px] sm:min-h-48 sm:w-48 rounded-full overflow-hidden shadow-lg hover:scale-105 hover:shadow-[0_0_15px_rgba(var(--violet-9-rgb),0.4)] transition-all duration-300 cursor-pointer flex-shrink-0 mb-0 sm:mb-0 -mt-10 sm:mt-0 border-2 border-transparent"
-                  style={{
-                    transformOrigin: 'center center',
-                    transition: 'transform 0.5s ease, opacity 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease'
-                  }}
-                >
-                  <img 
-                    src="/profile.png" 
-                    alt="Alex Montesino profile" 
-                    className="w-full h-full object-cover transition-transform duration-300"
-                  />
+          <div className="flex min-h-[90vh] sm:min-h-0 items-start justify-center sm:items-center p-4 pt-10 sm:p-6 @container mb-6 sm:mb-8 md:mb-14" id="about">
+            <div className="flex w-full flex-col sm:flex-row gap-8 sm:gap-6 mt-10 sm:mt-0 @[520px]:justify-between @[520px]:items-center">
+              <div className="flex flex-col sm:flex-row items-center">
+                <div className="flex justify-center w-full sm:w-auto mb-6 sm:mb-0">
+                  <div
+                    ref={profileRef}
+                    className="min-h-[220px] w-[220px] sm:min-h-48 sm:w-48 rounded-full overflow-hidden shadow-lg hover:scale-105 hover:shadow-[0_0_15px_rgba(var(--violet-9-rgb),0.4)] transition-all duration-300 cursor-pointer flex-shrink-0 border-2 border-transparent"
+                    style={{
+                      transformOrigin: 'center center',
+                      transition: 'transform 0.5s ease, opacity 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease'
+                    }}
+                  >
+                    <img 
+                      src="/profile.png" 
+                      alt="Alex Montesino profile" 
+                      className="w-full h-full object-cover transition-transform duration-300"
+                    />
+                  </div>
                 </div>
                 <div className="flex flex-col justify-center text-center sm:text-left my-auto sm:ml-8">
-                  <p className="text-white text-[30px] sm:text-[28px] font-bold leading-tight tracking-[-0.015em] mb-2 sm:mb-1">Alex Montesino</p>
+                  <p className="text-white text-[32px] sm:text-[28px] font-bold leading-tight tracking-[-0.015em] mb-2 sm:mb-1">Alex Montesino</p>
                   <p className="text-[#9dabb8] text-xl sm:text-xl font-normal leading-normal mb-4 sm:mb-3">Backend Developer | API Specialist</p>
-                  <p className="text-[--violet-9] text-lg sm:text-sm font-medium mb-2 sm:mb-0">&gt; Transforming ideas into scalable solutions</p>
+                  <p className="text-[--violet-9] text-lg sm:text-sm font-medium mb-6 sm:mb-0">&gt; Transforming ideas into scalable solutions</p>
+                  
+                  <div className="flex flex-row sm:hidden items-center justify-center gap-4 mt-6">
+                    <a 
+                      href="https://www.linkedin.com/in/alex-montesino-03797b1b0/" 
+                      target="_blank"
+                      className="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-5 bg-gradient-to-b from-[--violet-9] to-[--violet-9] hover:to-[--violet-10] text-white text-base font-bold leading-normal tracking-[0.015em] w-full max-w-[150px] transition-all border-t border-[rgba(255,255,255,0.21)]"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="mr-2">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                      </svg>
+                      <span className="truncate">Conectar</span>
+                    </a>
+                    
+                    <a 
+                      href="https://github.com/Alexmontesino96" 
+                      target="_blank" 
+                      className="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-5 bg-black text-white text-base font-bold leading-normal tracking-[0.015em] w-full max-w-[150px] hover:bg-[#333333] transition-colors border border-white/30"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="mr-2">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                      </svg>
+                      <span className="truncate">GitHub</span>
+                    </a>
+                  </div>
                 </div>
               </div>
-              <div className="flex flex-row sm:flex-col items-center justify-center gap-4 sm:gap-3 mt-2 sm:mt-0">
+              <div className="hidden sm:flex sm:flex-col items-center justify-center gap-3 mt-0">
                 <a 
                   href="https://www.linkedin.com/in/alex-montesino-03797b1b0/" 
                   target="_blank"
-                  className="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 sm:h-10 px-5 sm:px-6 bg-gradient-to-b from-[--violet-9] to-[--violet-9] hover:to-[--violet-10] text-white text-base sm:text-sm font-bold leading-normal tracking-[0.015em] w-full max-w-[150px] sm:max-w-[200px] transition-all border-t border-[rgba(255,255,255,0.21)] sm:mb-3"
+                  className="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-6 bg-gradient-to-b from-[--violet-9] to-[--violet-9] hover:to-[--violet-10] text-white text-sm font-bold leading-normal tracking-[0.015em] w-full max-w-[200px] transition-all border-t border-[rgba(255,255,255,0.21)] mb-3"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="mr-2 sm:w-4 sm:h-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="mr-2 w-4 h-4">
                     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                   </svg>
                   <span className="truncate">Conectar</span>
@@ -120,9 +146,9 @@ function Home() {
                 <a 
                   href="https://github.com/Alexmontesino96" 
                   target="_blank" 
-                  className="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 sm:h-10 px-5 sm:px-6 bg-black text-white text-base sm:text-sm font-bold leading-normal tracking-[0.015em] w-full max-w-[150px] sm:max-w-[200px] hover:bg-[#333333] transition-colors border border-white/30"
+                  className="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-6 bg-black text-white text-sm font-bold leading-normal tracking-[0.015em] w-full max-w-[200px] hover:bg-[#333333] transition-colors border border-white/30"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="mr-2 sm:w-4 sm:h-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="mr-2 w-4 h-4">
                     <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                   </svg>
                   <span className="truncate">GitHub</span>
