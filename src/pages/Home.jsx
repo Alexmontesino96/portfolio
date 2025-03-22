@@ -234,6 +234,14 @@ function Home() {
           </div>
           
           <h2 className="text-white text-[28px] font-bold leading-tight tracking-[-0.015em] px-6 pb-6 pt-10 border-b border-[#293038] mb-8">Other Projects</h2>
+          <div className="px-6 mb-4">
+            <Link to="/projects" className="text-[#3B82F6] hover:text-[#2563EB] transition-colors text-sm flex items-center">
+              <span>Ver todos los proyectos</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" className="ml-1">
+                <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+              </svg>
+            </Link>
+          </div>
           <div className="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-5 p-6 mb-16">
             <Link to="/project/supplies-order-predict" className="flex flex-col gap-4 pb-3 group">
               <div
@@ -292,9 +300,6 @@ function Home() {
                 </svg>
                 <span>GitHub</span>
               </a>
-              <Link to="/projects" className="flex items-center justify-center rounded-xl h-12 px-6 bg-[#3B82F6] text-white font-medium transition-colors hover:bg-[#2563EB]">
-                Ver proyectos
-              </Link>
             </div>
             <Link to="/contact" className="flex items-center justify-center rounded-xl h-12 px-6 bg-[#3B82F6] text-white font-medium transition-colors hover:bg-[#2563EB]">
               Contactar
