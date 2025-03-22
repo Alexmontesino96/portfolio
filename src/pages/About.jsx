@@ -24,19 +24,26 @@ function About() {
           // La imagen está en la zona de activación cerca del borde superior
           const distanceFactor = Math.abs((elementTop - activationThresholdTop) / (activationThresholdBottom - activationThresholdTop));
           // Escala de encogimiento: mayor en móviles, más sutil en pantallas grandes
-          const maxShrink = window.innerWidth < 640 ? 0.15 : 0.08;
+          const maxShrink = window.innerWidth < 640 ? 0.25 : 0.15;
           const scaleValue = 1 - Math.min(maxShrink, maxShrink * distanceFactor);
+          // Pequeña rotación para hacer más visible el efecto
+          const rotateValue = Math.min(5, 5 * distanceFactor);
+          // Ligero desplazamiento hacia arriba
+          const translateY = Math.min(-10, -10 * distanceFactor);
           
-          profileRef.current.style.transform = `scale(${scaleValue})`;
+          profileRef.current.style.transform = `scale(${scaleValue}) rotate(${rotateValue}deg) translateY(${translateY}px)`;
           profileRef.current.style.zIndex = '40';
           profileRef.current.style.borderColor = 'var(--violet-9)';
-          profileRef.current.style.boxShadow = '0 0 20px rgba(var(--violet-9-rgb),0.4)';
+          profileRef.current.style.boxShadow = '0 0 25px rgba(var(--violet-9-rgb),0.6)';
+          // Agregar un filtro de brillo sutil
+          profileRef.current.style.filter = 'brightness(1.1)';
         } else {
           // Reset cuando la imagen está fuera de la zona de activación
-          profileRef.current.style.transform = 'scale(1)';
+          profileRef.current.style.transform = 'scale(1) rotate(0deg) translateY(0)';
           profileRef.current.style.zIndex = 'auto';
           profileRef.current.style.borderColor = 'transparent';
           profileRef.current.style.boxShadow = '';
+          profileRef.current.style.filter = 'brightness(1)';
         }
       }
     };
@@ -60,7 +67,7 @@ function About() {
                 className="min-h-44 w-44 sm:min-h-48 sm:w-48 rounded-full overflow-hidden shadow-lg transition-all duration-300 cursor-pointer flex-shrink-0 border-2 border-transparent"
                 style={{
                   transformOrigin: 'center top',
-                  transition: 'transform 0.5s ease, opacity 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease'
+                  transition: 'transform 0.3s ease-out, opacity 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease'
                 }}
               >
                 <img 
