@@ -12,12 +12,12 @@ const OrderServiceModule = () => {
       </p>
 
       <div className="mt-6 sm:mt-8">
-        <h3 className="text-[#E3B341] text-base sm:text-lg font-bold mb-3">⭐ Código Destacado</h3>
+        <h3 className="text-[--violet-9] text-base sm:text-lg font-bold mb-3">⭐ Código Destacado</h3>
         <div className="grid grid-cols-1 gap-3 sm:gap-4">
           
           {/* Procesamiento inteligente de archivos CSV */}
           <div className="bg-[#0D1117] p-3 sm:p-4 rounded-md border border-[#293038]">
-            <p className="text-[#3B82F6] font-bold mb-2 text-sm">Procesamiento inteligente de archivos CSV</p>
+            <p className="text-[--violet-9] font-bold mb-2 text-sm">Procesamiento inteligente de archivos CSV</p>
             <pre className="overflow-x-auto text-[#9dabb8] text-xs">
 {`def process_order_csv(self, user_email: int, csv_file: UploadFile = File(...)) -> JSONResponse:
     """Procesa un archivo CSV para importar múltiples pedidos de forma masiva"""
@@ -56,7 +56,7 @@ const OrderServiceModule = () => {
           
           {/* Transacciones anidadas con manejo de errores */}
           <div className="bg-[#0D1117] p-3 sm:p-4 rounded-md border border-[#293038]">
-            <p className="text-[#3B82F6] font-bold mb-2 text-sm">Transacciones anidadas con manejo de errores</p>
+            <p className="text-[--violet-9] font-bold mb-2 text-sm">Transacciones anidadas con manejo de errores</p>
             <pre className="overflow-x-auto text-[#9dabb8] text-xs">
 {`def update_bulk_products(self, product_price_list: List[ProductPrice]) -> JSONResponse:
     """Actualiza precios de múltiples productos en una sola transacción"""
@@ -104,7 +104,7 @@ const OrderServiceModule = () => {
           
           {/* Sistema inteligente de búsqueda y filtrado */}
           <div className="bg-[#0D1117] p-3 sm:p-4 rounded-md border border-[#293038]">
-            <p className="text-[#3B82F6] font-bold mb-2 text-sm">Sistema inteligente de búsqueda y filtrado</p>
+            <p className="text-[--violet-9] font-bold mb-2 text-sm">Sistema inteligente de búsqueda y filtrado</p>
             <pre className="overflow-x-auto text-[#9dabb8] text-xs">
 {`def search_orders(
     self, 
@@ -155,7 +155,7 @@ const OrderServiceModule = () => {
       </div>
 
       <div className="mt-5 sm:mt-6">
-        <h3 className="text-[#3B82F6] text-base sm:text-lg font-bold mb-2 sm:mb-3">Funcionalidades Principales</h3>
+        <h3 className="text-[--violet-9] text-base sm:text-lg font-bold mb-2 sm:mb-3">Funcionalidades Principales</h3>
         <ul className="list-disc pl-5 text-[#9dabb8] space-y-1 sm:space-y-2 text-sm">
           <li><strong>Gestión de inventario:</strong> Sistema completo para gestionar productos con actualizaciones en tiempo real.</li>
           <li><strong>Procesamiento de pedidos:</strong> Creación, modificación y seguimiento de pedidos con cálculos automáticos.</li>
@@ -165,7 +165,7 @@ const OrderServiceModule = () => {
         </ul>
       </div>
       <div className="mt-5 sm:mt-6">
-        <h3 className="text-[#3B82F6] text-base sm:text-lg font-bold mb-2 sm:mb-3">Técnicas Avanzadas</h3>
+        <h3 className="text-[--violet-9] text-base sm:text-lg font-bold mb-2 sm:mb-3">Técnicas Avanzadas</h3>
         <div className="bg-[#0D1117] p-3 sm:p-4 rounded-md">
           <ul className="list-disc pl-5 text-[#9dabb8] space-y-1 sm:space-y-2 text-sm">
             <li><strong>Adaptación de datos:</strong> Sistema flexible para adaptarse a diferentes formatos de entrada de datos.</li>

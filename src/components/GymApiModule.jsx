@@ -12,12 +12,12 @@ const GymApiModule = () => {
       </p>
 
       <div className="mt-6 sm:mt-8">
-        <h3 className="text-[#E3B341] text-base sm:text-lg font-bold mb-3">⭐ Código Destacado</h3>
+        <h3 className="text-[--violet-9] text-base sm:text-lg font-bold mb-3">⭐ Código Destacado</h3>
         <div className="grid grid-cols-1 gap-3 sm:gap-4">
           
           {/* Modelo relacional con enumeraciones tipadas */}
           <div className="bg-[#0D1117] p-3 sm:p-4 rounded-md border border-[#293038]">
-            <p className="text-[#3B82F6] font-bold mb-2 text-sm">Modelo relacional con enumeraciones tipadas</p>
+            <p className="text-[--violet-9] font-bold mb-2 text-sm">Modelo relacional con enumeraciones tipadas</p>
             <pre className="overflow-x-auto text-[#9dabb8] text-xs">
 {`class EventStatus(str, enum.Enum):
     """Estado del evento."""
@@ -48,7 +48,7 @@ class Event(Base):
           
           {/* Gestión de Relaciones con validación multinivel */}
           <div className="bg-[#0D1117] p-3 sm:p-4 rounded-md border border-[#293038]">
-            <p className="text-[#3B82F6] font-bold mb-2 text-sm">Gestión de relaciones con validación multinivel</p>
+            <p className="text-[--violet-9] font-bold mb-2 text-sm">Gestión de relaciones con validación multinivel</p>
             <pre className="overflow-x-auto text-[#9dabb8] text-xs">
 {`def create_relationship(
     self, db: Session, relationship_in: TrainerMemberRelationshipCreate, created_by_id: int
@@ -79,7 +79,7 @@ class Event(Base):
           
           {/* API asíncrona con WebSockets para chat en tiempo real */}
           <div className="bg-[#0D1117] p-3 sm:p-4 rounded-md border border-[#293038]">
-            <p className="text-[#3B82F6] font-bold mb-2 text-sm">API asíncrona con WebSockets para chat en tiempo real</p>
+            <p className="text-[--violet-9] font-bold mb-2 text-sm">API asíncrona con WebSockets para chat en tiempo real</p>
             <pre className="overflow-x-auto text-[#9dabb8] text-xs">
 {`@router.websocket("/ws/{chat_room_id}")
 async def websocket_endpoint(
@@ -118,7 +118,7 @@ async def websocket_endpoint(
       </div>
 
       <div className="mt-5 sm:mt-6">
-        <h3 className="text-[#3B82F6] text-base sm:text-lg font-bold mb-2 sm:mb-3">Funcionalidades Principales</h3>
+        <h3 className="text-[--violet-9] text-base sm:text-lg font-bold mb-2 sm:mb-3">Funcionalidades Principales</h3>
         <ul className="list-disc pl-5 text-[#9dabb8] space-y-1 sm:space-y-2 text-sm">
           <li><strong>Gestión de eventos:</strong> Sistema completo para creación, programación y seguimiento de clases y actividades.</li>
           <li><strong>Relaciones entrenador-miembro:</strong> Estructura para asignar miembros a entrenadores y gestionar sus relaciones.</li>
@@ -128,7 +128,7 @@ async def websocket_endpoint(
         </ul>
       </div>
       <div className="mt-5 sm:mt-6">
-        <h3 className="text-[#3B82F6] text-base sm:text-lg font-bold mb-2 sm:mb-3">Técnicas Avanzadas</h3>
+        <h3 className="text-[--violet-9] text-base sm:text-lg font-bold mb-2 sm:mb-3">Técnicas Avanzadas</h3>
         <div className="bg-[#0D1117] p-3 sm:p-4 rounded-md">
           <ul className="list-disc pl-5 text-[#9dabb8] space-y-1 sm:space-y-2 text-sm">
             <li><strong>API asíncrona:</strong> Uso de async/await para operaciones no bloqueantes y mejor rendimiento en endpoints concurridos.</li>

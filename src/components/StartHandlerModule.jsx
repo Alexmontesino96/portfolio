@@ -38,12 +38,12 @@ class FinancialFamilyBot:
       </pre>
       
       <div className="mt-8">
-        <h3 className="text-[#E3B341] text-lg font-bold mb-3">⭐ Código Destacado</h3>
+        <h3 className="text-[--violet-9] text-lg font-bold mb-3">⭐ Código Destacado</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           
           {/* Recomendación personalizada */}
           <div className="bg-[#0D1117] p-4 rounded-md border border-[#293038]">
-            <p className="text-[#3B82F6] font-bold mb-2">Sistema de Conversación</p>
+            <p className="text-[--violet-9] font-bold mb-2">Sistema de Conversación</p>
             <pre className="overflow-x-auto text-[#9dabb8] text-xs">
 {`class ExpenseForm(StatesGroup):
     """Máquina de estados para el registro de gastos"""
@@ -80,7 +80,7 @@ async def cmd_add_expense(message: types.Message):
           
           {/* Puntuación de candidatos */}
           <div className="bg-[#0D1117] p-4 rounded-md border border-[#293038]">
-            <p className="text-[#3B82F6] font-bold mb-2">Generación de Informes</p>
+            <p className="text-[--violet-9] font-bold mb-2">Generación de Informes</p>
             <pre className="overflow-x-auto text-[#9dabb8] text-xs">
 {`async def generate_balance_report(family_id: int, 
                            period: str = "month",
@@ -109,7 +109,7 @@ async def cmd_add_expense(message: types.Message):
           
           {/* Algoritmo de diversidad */}
           <div className="bg-[#0D1117] p-4 rounded-md border border-[#293038]">
-            <p className="text-[#3B82F6] font-bold mb-2">Gestión de Grupos</p>
+            <p className="text-[--violet-9] font-bold mb-2">Gestión de Grupos</p>
             <pre className="overflow-x-auto text-[#9dabb8] text-xs">
 {`async def create_family_group(message: types.Message, state: FSMContext):
     """Crea un nuevo grupo familiar y genera código QR de invitación"""
@@ -146,7 +146,7 @@ async def cmd_add_expense(message: types.Message):
           
           {/* Adaptación Energética */}
           <div className="bg-[#0D1117] p-4 rounded-md border border-[#293038]">
-            <p className="text-[#3B82F6] font-bold mb-2">División de Gastos</p>
+            <p className="text-[--violet-9] font-bold mb-2">División de Gastos</p>
             <pre className="overflow-x-auto text-[#9dabb8] text-xs">
 {`async def process_expense_split(expense_data: dict, split_type: str):
     """Procesa la división de un gasto entre miembros"""
@@ -177,7 +177,7 @@ async def cmd_add_expense(message: types.Message):
           
           {/* Detección de Anomalías */}
           <div className="bg-[#0D1117] p-4 rounded-md border border-[#293038] md:col-span-2">
-            <p className="text-[#3B82F6] font-bold mb-2">Visualización de Datos</p>
+            <p className="text-[--violet-9] font-bold mb-2">Visualización de Datos</p>
             <pre className="overflow-x-auto text-[#9dabb8] text-xs">
 {`async def generate_monthly_overview(chat_id: int, family_id: int):
     """Genera y envía un resumen visual mensual de gastos"""
@@ -232,7 +232,7 @@ async def cmd_add_expense(message: types.Message):
       </div>
 
       <div className="mt-6">
-        <h3 className="text-[#3B82F6] text-lg font-bold mb-3">Funcionalidades Principales</h3>
+        <h3 className="text-[--violet-9] text-lg font-bold mb-3">Funcionalidades Principales</h3>
         <ul className="list-disc pl-5 text-[#9dabb8] space-y-2">
           <li><strong>Gestión de grupos familiares:</strong> Creación de familias, invitación de miembros mediante códigos QR y administración de permisos.</li>
           <li><strong>Registro de gastos compartidos:</strong> Sistema conversacional para registrar gastos con diferentes métodos de división entre miembros.</li>
@@ -242,7 +242,7 @@ async def cmd_add_expense(message: types.Message):
         </ul>
       </div>
       <div className="mt-6">
-        <h3 className="text-[#3B82F6] text-lg font-bold mb-3">Conceptos Técnicos</h3>
+        <h3 className="text-[--violet-9] text-lg font-bold mb-3">Conceptos Técnicos</h3>
         <div className="bg-[#0D1117] p-4 rounded-md">
           <ul className="list-disc pl-5 text-[#9dabb8] space-y-2">
             <li><strong>Máquinas de estado:</strong> Implementación de flujos conversacionales complejos con aiogram y FSM.</li>

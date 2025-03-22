@@ -12,12 +12,12 @@ const BalanceServiceModule = () => {
       </p>
 
       <div className="mt-6 sm:mt-8">
-        <h3 className="text-[#E3B341] text-base sm:text-lg font-bold mb-3">⭐ Código Destacado</h3>
+        <h3 className="text-[--violet-9] text-base sm:text-lg font-bold mb-3">⭐ Código Destacado</h3>
         <div className="grid grid-cols-1 gap-3 sm:gap-4">
           
           {/* Algoritmo de neteo de deudas mutuas */}
           <div className="bg-[#0D1117] p-3 sm:p-4 rounded-md border border-[#293038]">
-            <p className="text-[#3B82F6] font-bold mb-2 text-sm">Algoritmo de neteo de deudas mutuas</p>
+            <p className="text-[--violet-9] font-bold mb-2 text-sm">Algoritmo de neteo de deudas mutuas</p>
             <pre className="overflow-x-auto text-[#9dabb8] text-xs">
 {`def optimize_debts(self, family_id: int) -> Dict[str, Any]:
     """
@@ -49,7 +49,7 @@ const BalanceServiceModule = () => {
           
           {/* Verificación de consistencia de balances */}
           <div className="bg-[#0D1117] p-3 sm:p-4 rounded-md border border-[#293038]">
-            <p className="text-[#3B82F6] font-bold mb-2 text-sm">Verificación de consistencia de balances</p>
+            <p className="text-[--violet-9] font-bold mb-2 text-sm">Verificación de consistencia de balances</p>
             <pre className="overflow-x-auto text-[#9dabb8] text-xs">
 {`def verify_balance_consistency(self, family_id: int, debug_mode: bool = False) -> Dict[str, Any]:
     """
@@ -82,7 +82,7 @@ const BalanceServiceModule = () => {
           
           {/* Detección avanzada de pagos duplicados */}
           <div className="bg-[#0D1117] p-3 sm:p-4 rounded-md border border-[#293038]">
-            <p className="text-[#3B82F6] font-bold mb-2 text-sm">Detección avanzada de pagos duplicados</p>
+            <p className="text-[--violet-9] font-bold mb-2 text-sm">Detección avanzada de pagos duplicados</p>
             <pre className="overflow-x-auto text-[#9dabb8] text-xs">
 {`def detect_duplicate_payments(self, family_id: int, threshold_minutes: int = 10, 
                          threshold_percentage: float = 5.0) -> List[Dict[str, Any]]:
@@ -111,7 +111,7 @@ const BalanceServiceModule = () => {
       </div>
 
       <div className="mt-5 sm:mt-6">
-        <h3 className="text-[#3B82F6] text-base sm:text-lg font-bold mb-2 sm:mb-3">Funcionalidades Principales</h3>
+        <h3 className="text-[--violet-9] text-base sm:text-lg font-bold mb-2 sm:mb-3">Funcionalidades Principales</h3>
         <ul className="list-disc pl-5 text-[#9dabb8] space-y-1 sm:space-y-2 text-sm">
           <li><strong>Cálculo de balances:</strong> Sistema para determinar saldos entre miembros de una familia.</li>
           <li><strong>Optimización de deudas:</strong> Algoritmo para minimizar el número de transacciones necesarias para saldar deudas.</li>
@@ -121,7 +121,7 @@ const BalanceServiceModule = () => {
         </ul>
       </div>
       <div className="mt-5 sm:mt-6">
-        <h3 className="text-[#3B82F6] text-base sm:text-lg font-bold mb-2 sm:mb-3">Conceptos Técnicos</h3>
+        <h3 className="text-[--violet-9] text-base sm:text-lg font-bold mb-2 sm:mb-3">Conceptos Técnicos</h3>
         <div className="bg-[#0D1117] p-3 sm:p-4 rounded-md">
           <ul className="list-disc pl-5 text-[#9dabb8] space-y-1 sm:space-y-2 text-sm">
             <li><strong>Algoritmos de grafos:</strong> Técnicas de flujo de red para optimizar transacciones financieras entre múltiples partes.</li>

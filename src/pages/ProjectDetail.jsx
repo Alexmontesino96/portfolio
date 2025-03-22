@@ -627,7 +627,7 @@ function ProjectDetail() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-6">
             {project.features.map((feature, index) => (
               <div key={index} className="bg-[#161B22] rounded-xl p-3 sm:p-4 md:p-5 shadow-md border border-[#293038]">
-                <h3 className="text-[#3B82F6] text-sm sm:text-base md:text-lg font-bold mb-1 sm:mb-2">
+                <h3 className="text-[--violet-9] text-sm sm:text-base md:text-lg font-bold mb-1 sm:mb-2">
                   {feature.title}
                 </h3>
                 <p className="text-[#9dabb8] text-xs sm:text-sm">
@@ -711,7 +711,7 @@ function ProjectDetail() {
               <span>Ver en GitHub</span>
             </a>
             <a href="mailto:alex.montesino@example.com" 
-              className="flex items-center justify-center rounded-xl h-10 px-4 sm:px-6 bg-[#3B82F6] text-white text-sm font-medium transition-colors hover:bg-[#2563EB] w-full sm:w-auto">
+              className="flex items-center justify-center rounded-xl h-10 px-4 sm:px-6 bg-gradient-to-b from-[--violet-9] to-[--violet-9] hover:to-[--violet-10] text-white text-sm font-medium transition-all border-t border-[rgba(255,255,255,0.21)] w-full sm:w-auto">
               <span>Contactar</span>
             </a>
           </div>
