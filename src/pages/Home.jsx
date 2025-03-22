@@ -87,13 +87,14 @@ function Home() {
           <div className="flex min-h-[90vh] sm:min-h-0 items-start justify-center sm:items-center p-4 pt-10 sm:p-6 @container mb-6 sm:mb-8 md:mb-14" id="about">
             <div className="flex w-full flex-col sm:flex-row gap-8 sm:gap-6 mt-10 sm:mt-0 @[520px]:justify-between @[520px]:items-center">
               <div className="flex flex-col sm:flex-row items-center">
-                <div className="flex justify-center w-full sm:w-auto mb-6 sm:mb-0">
+                <div className="flex justify-center w-full sm:w-auto mb-8 sm:mb-2">
                   <div
                     ref={profileRef}
                     className="min-h-[220px] w-[220px] sm:min-h-48 sm:w-48 rounded-full overflow-hidden shadow-lg transition-all duration-300 cursor-pointer flex-shrink-0 border-2 border-transparent"
                     style={{
                       transformOrigin: 'center center',
-                      transition: 'transform 0.3s ease-out'
+                      transition: 'transform 0.3s ease-out',
+                      margin: '5px 5px 10px 5px'
                     }}
                   >
                     <img 
@@ -103,7 +104,7 @@ function Home() {
                     />
                   </div>
                 </div>
-                <div className="flex flex-col justify-center text-center sm:text-left my-auto sm:ml-8">
+                <div className="flex flex-col justify-center text-center sm:text-left my-auto sm:ml-12">
                   <p className="text-white text-[32px] sm:text-[28px] font-bold leading-tight tracking-[-0.015em] mb-2 sm:mb-1">Alex Montesino</p>
                   <p className="text-[#9dabb8] text-xl sm:text-xl font-normal leading-normal mb-4 sm:mb-3">Backend Developer | API Specialist</p>
                   <p className="text-[--violet-9] text-lg sm:text-sm font-medium mb-6 sm:mb-0">&gt; Transforming ideas into scalable solutions</p>

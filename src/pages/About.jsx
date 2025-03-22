@@ -54,13 +54,14 @@ function About() {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           <div className="md:col-span-1">
-            <div className="flex justify-center mb-6 md:mb-4">
+            <div className="flex justify-center mb-8 md:mb-6">
               <div
                 ref={profileRef}
                 className="min-h-44 w-44 sm:min-h-48 sm:w-48 rounded-full overflow-hidden shadow-lg transition-all duration-300 cursor-pointer flex-shrink-0 border-2 border-transparent"
                 style={{
                   transformOrigin: 'center center',
-                  transition: 'transform 0.3s ease-out'
+                  transition: 'transform 0.3s ease-out',
+                  margin: '5px 5px 10px 5px'
                 }}
               >
                 <img 
