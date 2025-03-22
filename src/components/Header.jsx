@@ -60,7 +60,7 @@ function Header() {
         </div>
         <div className="flex gap-2">
           <button
-            className={`p-2 rounded-md flex items-center gap-2 transition-all ${isDarkMode ? 'bg-[#21262D] text-white hover:bg-[#30363D]' : 'bg-[#F0F0F0] hover:bg-[#E0E0E0]'}`}
+            className={`p-2 rounded-md flex items-center gap-2 transition-all ${isDarkMode ? 'bg-[#21262D] text-white hover:bg-[#30363D]' : 'bg-[#dcdcdc] text-[#111418] hover:bg-[#c8c8c8]'}`}
             onClick={() => setIsDarkMode(!isDarkMode)}
             aria-label={isDarkMode ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
           >
@@ -106,7 +106,7 @@ function Header() {
         style={{
           backgroundColor: isDarkMode 
             ? 'rgba(13, 17, 23, 0.98)' 
-            : 'rgba(245, 245, 245, 0.98)',
+            : 'rgba(240, 240, 240, 0.98)',
           backdropFilter: isMenuOpen ? 'blur(10px)' : 'none',
           WebkitBackdropFilter: isMenuOpen ? 'blur(10px)' : 'none',
           position: 'fixed',
@@ -128,7 +128,7 @@ function Header() {
         <nav className="flex flex-col items-center gap-8 py-8">
           <Link 
             to="/about" 
-            className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} text-xl font-medium hover:text-[--violet-9] transition-colors py-4 px-8 active:opacity-70 touch-manipulation rounded-xl ${isDarkMode ? 'bg-[#161B22]/30' : 'bg-white/10'}`}
+            className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} text-xl font-medium hover:text-[--violet-9] transition-colors py-4 px-8 active:opacity-70 touch-manipulation rounded-xl ${isDarkMode ? 'bg-[#161B22]/30' : 'bg-[#e0e0e0]/60'}`}
             onClick={() => setIsMenuOpen(false)}
             style={{ WebkitTapHighlightColor: 'transparent' }}
           >
@@ -136,7 +136,7 @@ function Header() {
           </Link>
           <Link 
             to="/projects" 
-            className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} text-xl font-medium hover:text-[--violet-9] transition-colors py-4 px-8 active:opacity-70 touch-manipulation rounded-xl ${isDarkMode ? 'bg-[#161B22]/30' : 'bg-white/10'}`}
+            className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} text-xl font-medium hover:text-[--violet-9] transition-colors py-4 px-8 active:opacity-70 touch-manipulation rounded-xl ${isDarkMode ? 'bg-[#161B22]/30' : 'bg-[#e0e0e0]/60'}`}
             onClick={() => setIsMenuOpen(false)}
             style={{ WebkitTapHighlightColor: 'transparent' }}
           >
@@ -144,7 +144,7 @@ function Header() {
           </Link>
           <Link 
             to="/contact" 
-            className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} text-xl font-medium hover:text-[--violet-9] transition-colors py-4 px-8 active:opacity-70 touch-manipulation rounded-xl ${isDarkMode ? 'bg-[#161B22]/30' : 'bg-white/10'}`}
+            className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} text-xl font-medium hover:text-[--violet-9] transition-colors py-4 px-8 active:opacity-70 touch-manipulation rounded-xl ${isDarkMode ? 'bg-[#161B22]/30' : 'bg-[#e0e0e0]/60'}`}
             onClick={() => setIsMenuOpen(false)}
             style={{ WebkitTapHighlightColor: 'transparent' }}
           >
@@ -159,7 +159,7 @@ function Header() {
               className={`flex items-center justify-center rounded-xl h-10 w-10 ${
                 isDarkMode 
                   ? 'bg-[#161B22]/30 text-white hover:bg-[--violet-9]' 
-                  : 'bg-white/10 text-[#111418] hover:bg-[--violet-9] hover:text-white'
+                  : 'bg-[#e0e0e0]/60 text-[#111418] hover:bg-[--violet-9] hover:text-white'
               } transition-colors active:opacity-70 touch-manipulation`}
               style={{ WebkitTapHighlightColor: 'transparent' }}
             >
@@ -179,7 +179,7 @@ function Header() {
             <a 
               href="https://github.com/Alexmontesino96" 
               target="_blank" 
-              className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} hover:text-[--violet-9] transition-colors p-2 rounded-xl ${isDarkMode ? 'bg-[#161B22]/30' : 'bg-white/10'} active:opacity-70 touch-manipulation`}
+              className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} hover:text-[--violet-9] transition-colors p-2 rounded-xl ${isDarkMode ? 'bg-[#161B22]/30' : 'bg-[#e0e0e0]/60'} active:opacity-70 touch-manipulation`}
               style={{ WebkitTapHighlightColor: 'transparent' }}
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -189,7 +189,7 @@ function Header() {
             <a 
               href="https://www.linkedin.com/in/alex-montesino-03797b1b0/"
               target="_blank" 
-              className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} hover:text-[--violet-9] transition-colors p-2 rounded-xl ${isDarkMode ? 'bg-[#161B22]/30' : 'bg-white/10'} active:opacity-70 touch-manipulation`}
+              className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} hover:text-[--violet-9] transition-colors p-2 rounded-xl ${isDarkMode ? 'bg-[#161B22]/30' : 'bg-[#e0e0e0]/60'} active:opacity-70 touch-manipulation`}
               style={{ WebkitTapHighlightColor: 'transparent' }}
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
