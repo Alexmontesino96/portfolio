@@ -116,11 +116,7 @@ function Projects() {
                 className="w-full aspect-video bg-center bg-no-repeat bg-cover border-b border-[#293038] relative"
                 style={{ backgroundImage: `url("${project.image}")` }}
               >
-                <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity flex items-center justify-center">
-                  <div className="bg-[#3B82F6] text-white text-sm font-semibold py-2 px-4 rounded-lg opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all">
-                    {project.externalLink ? 'Ver en GitHub' : 'Ver detalle'}
-                  </div>
-                </div>
+                <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity"></div>
               </div>
               
               <div className="p-5">
