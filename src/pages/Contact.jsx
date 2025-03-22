@@ -248,16 +248,16 @@ function Contact() {
                     </div>
                     
                     <div>
-                      <button
-                        type="submit"
-                        disabled={formStatus.submitting}
-                        className={`px-6 py-3 bg-[#3B82F6] text-white font-bold rounded-xl transition-colors ${
+                      <button 
+                        type="submit" 
+                        disabled={formStatus.submitting} 
+                        className={`px-6 py-3 bg-gradient-to-b from-[--violet-9] to-[--violet-9] hover:to-[--violet-10] text-white font-bold rounded-xl transition-all border-t border-[rgba(255,255,255,0.21)] ${
                           formStatus.submitting 
-                            ? 'opacity-70 cursor-not-allowed' 
-                            : 'hover:bg-[#2563EB]'
+                          ? 'opacity-50 cursor-not-allowed' 
+                          : 'hover:to-[--violet-10]'
                         }`}
                       >
-                        {formStatus.submitting ? 'Enviando...' : 'Enviar Mensaje'}
+                        {formStatus.submitting ? 'Enviando...' : 'Enviar mensaje'}
                       </button>
                     </div>
                   </form>

@@ -558,9 +558,11 @@ function ProjectDetail() {
         <div className="layout-content-container flex flex-col max-w-[960px] flex-1 items-center justify-center">
           <h2 className="text-white text-[28px] font-bold leading-tight tracking-[-0.015em] mb-6">Proyecto no encontrado</h2>
           <p className="text-[#9dabb8] text-base mb-8">El proyecto que estás buscando no existe o ha sido eliminado.</p>
-          <Link to="/" className="flex items-center justify-center rounded-xl h-12 px-6 bg-[#3B82F6] text-white font-medium transition-colors hover:bg-[#2563EB]">
-            <span>Volver al inicio</span>
-          </Link>
+          <div className="mb-6 text-center sm:text-left">
+            <Link to="/" className="flex items-center justify-center rounded-xl h-12 px-6 bg-gradient-to-b from-[--violet-9] to-[--violet-9] hover:to-[--violet-10] text-white font-medium transition-all border-t border-[rgba(255,255,255,0.21)]">
+              Volver al inicio
+            </Link>
+          </div>
         </div>
       </div>
     );
@@ -689,18 +691,23 @@ function ProjectDetail() {
           <p className="text-[#9dabb8] text-xs sm:text-sm text-center max-w-lg mb-4 sm:mb-6">
             Si quieres saber más sobre este proyecto o tienes alguna pregunta, no dudes en contactarme.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row gap-4 mt-10">
             {project.telegramBot && (
-              <a href={project.telegramBot} target="_blank" rel="noopener noreferrer" 
-                className="flex items-center justify-center rounded-xl h-10 px-4 sm:px-6 bg-[#0088cc] text-white text-sm font-medium transition-colors hover:bg-[#0099dd] w-full sm:w-auto">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24" className="mr-2">
-                  <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm-2.857 14.857l3.395-5.29c.142-.223.654-.328.95-.045l3.658 2.767c.192.148.459.123.623-.06l2.025-2.026.24-.174c.197-.143.186-.42 0-.582-.745-.685-5.037-4.744-5.037-4.744a.313.313 0 0 0-.404.029l-5.713 5.714c-.237.237-.164.657.142.83l1.028.601c.146.086.312.111.469.068l9.106-2.908-7.672 5.715c-.31.165-.261.637.045.828l.614.349a.507.507 0 0 0 .437.053l5.326-1.935-3.744 2.931a.333.333 0 0 1-.398.016z" />
-                </svg>
+              <a 
+                href={project.telegramBot} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex items-center justify-center rounded-xl h-10 px-4 sm:px-6 bg-[#293038] text-white text-sm font-medium transition-colors hover:bg-[--violet-9] w-full sm:w-auto"
+              >
                 <span>Probar en Telegram</span>
               </a>
             )}
-            <a href={project.github} target="_blank" rel="noopener noreferrer" 
-              className="flex items-center justify-center rounded-xl h-10 px-4 sm:px-6 bg-[#293038] text-white text-sm font-medium transition-colors hover:bg-[#3B82F6] w-full sm:w-auto">
+            <a 
+              href={project.github} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center justify-center rounded-xl h-10 px-4 sm:px-6 bg-gradient-to-b from-[--violet-9] to-[--violet-9] hover:to-[--violet-10] text-white text-sm font-medium transition-all border-t border-[rgba(255,255,255,0.21)] w-full sm:w-auto"
+            >
               <span>Ver en GitHub</span>
             </a>
             <a href="mailto:alex.montesino@example.com" 

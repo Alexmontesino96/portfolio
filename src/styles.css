@@ -1,0 +1,22 @@
+:root {
+  --violet-9: #8250df;
+  --violet-10: #6f42c1;
+  
+  /* Clase para botones con gradiente violeta */
+  .btn-violet {
+    @apply font-medium rounded-xl cursor-pointer inline-flex items-center justify-center px-[0.875rem] py-2 relative transition-all border-t border-[rgba(255,255,255,0.21)] bg-gradient-to-b from-[--violet-9] to-[--violet-9] hover:to-[--violet-10] text-white;
+  }
+  
+  /* Clases para diferentes tamaños de botones */
+  .btn-violet-sm {
+    @apply !px-4 !py-2 !h-10 !text-sm;
+  }
+  
+  .btn-violet-md {
+    @apply !px-6 !py-2 !h-11 !text-base;
+  }
+  
+  .btn-violet-lg {
+    @apply !px-[1.125rem] !py-2 !h-12 !font-medium !text-[1.125rem] !leading-[1.625rem] !tracking-[-0.01688rem];
+  }
+} 

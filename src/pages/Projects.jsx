@@ -85,16 +85,16 @@ function Projects() {
         
         {/* Filtros */}
         <div className="mb-8 flex flex-wrap gap-3">
-          <button className={`px-4 py-2 rounded-lg text-sm font-medium ${isDarkMode ? 'bg-[#3B82F6] text-white hover:bg-[#2563EB]' : 'bg-[#3B82F6] text-white hover:bg-[#2563EB]'} transition-colors`}>
+          <button className={`px-4 py-2 rounded-lg text-sm font-medium bg-gradient-to-b from-[--violet-9] to-[--violet-9] hover:to-[--violet-10] text-white transition-all border-t border-[rgba(255,255,255,0.21)]`}>
             Todos
           </button>
-          <button className={`px-4 py-2 rounded-lg text-sm font-medium ${isDarkMode ? 'bg-[#293038] text-white hover:bg-[#3B82F6]' : 'bg-[#e0e0e0] text-[#111418] hover:bg-[#3B82F6] hover:text-white'} transition-colors`}>
+          <button className={`px-4 py-2 rounded-lg text-sm font-medium ${isDarkMode ? 'bg-[#293038] text-white hover:bg-[--violet-9]' : 'bg-[#e0e0e0] text-[#111418] hover:bg-[--violet-9] hover:text-white'} transition-colors`}>
             API
           </button>
-          <button className={`px-4 py-2 rounded-lg text-sm font-medium ${isDarkMode ? 'bg-[#293038] text-white hover:bg-[#3B82F6]' : 'bg-[#e0e0e0] text-[#111418] hover:bg-[#3B82F6] hover:text-white'} transition-colors`}>
+          <button className={`px-4 py-2 rounded-lg text-sm font-medium ${isDarkMode ? 'bg-[#293038] text-white hover:bg-[--violet-9]' : 'bg-[#e0e0e0] text-[#111418] hover:bg-[--violet-9] hover:text-white'} transition-colors`}>
             Python
           </button>
-          <button className={`px-4 py-2 rounded-lg text-sm font-medium ${isDarkMode ? 'bg-[#293038] text-white hover:bg-[#3B82F6]' : 'bg-[#e0e0e0] text-[#111418] hover:bg-[#3B82F6] hover:text-white'} transition-colors`}>
+          <button className={`px-4 py-2 rounded-lg text-sm font-medium ${isDarkMode ? 'bg-[#293038] text-white hover:bg-[--violet-9]' : 'bg-[#e0e0e0] text-[#111418] hover:bg-[--violet-9] hover:text-white'} transition-colors`}>
             Base de datos
           </button>
         </div>
@@ -145,7 +145,7 @@ function Projects() {
                   {!project.externalLink ? (
                     <Link 
                       to={`/project/${id}`} 
-                      className="flex items-center justify-center rounded-xl h-10 px-4 bg-[#3B82F6] text-white text-sm font-medium transition-colors hover:bg-[#2563EB] flex-1"
+                      className="flex items-center justify-center rounded-xl h-10 px-4 bg-gradient-to-b from-[--violet-9] to-[--violet-9] hover:to-[--violet-10] text-white text-sm font-medium transition-all border-t border-[rgba(255,255,255,0.21)] flex-1"
                       onClick={(e) => e.stopPropagation()}
                     >
                       Ver detalle
@@ -155,7 +155,7 @@ function Projects() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center rounded-xl h-10 px-4 bg-[#3B82F6] text-white text-sm font-medium transition-colors hover:bg-[#2563EB] flex-1"
+                      className="flex items-center justify-center rounded-xl h-10 px-4 bg-gradient-to-b from-[--violet-9] to-[--violet-9] hover:to-[--violet-10] text-white text-sm font-medium transition-all border-t border-[rgba(255,255,255,0.21)] flex-1"
                       onClick={(e) => e.stopPropagation()}
                     >
                       Ver en GitHub
@@ -187,7 +187,7 @@ function Projects() {
             Si tienes alguna idea o proyecto en mente, estaré encantado de discutirlo contigo.
             Mi experiencia en desarrollo backend y APIs puede ayudarte a convertir tu idea en realidad.
           </p>
-          <Link to="/contact" className="inline-flex items-center justify-center rounded-xl h-12 px-6 bg-[#3B82F6] text-white font-medium transition-colors hover:bg-[#2563EB]">
+          <Link to="/contact" className="inline-flex items-center justify-center rounded-xl h-12 px-6 bg-gradient-to-b from-[--violet-9] to-[--violet-9] hover:to-[--violet-10] text-white font-medium transition-all border-t border-[rgba(255,255,255,0.21)]">
             Contactar
           </Link>
         </div>

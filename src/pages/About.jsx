@@ -209,7 +209,7 @@ function About() {
             Estoy siempre abierto a nuevas oportunidades y proyectos interesantes. Si tienes alguna idea o propuesta, no dudes en contactarme.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
-            <Link to="/contact" className="flex items-center justify-center rounded-xl h-11 px-5 sm:px-6 bg-[#3B82F6] text-white font-medium transition-colors hover:bg-[#2563EB] w-full sm:w-auto">
+            <Link to="/contact" className="flex items-center justify-center rounded-xl h-11 px-5 sm:px-6 bg-gradient-to-b from-[--violet-9] to-[--violet-9] hover:to-[--violet-10] text-white font-medium transition-all border-t border-[rgba(255,255,255,0.21)] w-full sm:w-auto">
               <span>Contactar</span>
             </Link>
             <a href="https://github.com/Alexmontesino96" target="_blank" className="flex items-center justify-center rounded-xl h-11 px-5 sm:px-6 bg-black text-white font-medium transition-colors hover:bg-[#333333] border border-white/30 w-full sm:w-auto">
