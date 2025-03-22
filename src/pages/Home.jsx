@@ -34,6 +34,7 @@ function Home() {
           const elementTop = elementRect.top;
           const elementHeight = elementRect.height;
           const viewportHeight = window.innerHeight;
+          const isMobile = window.innerWidth < 768; // Comprobamos si es vista móvil
           
           // Activar el efecto cuando la tarjeta está visible en el viewport
           // Consideramos que está visible cuando al menos 20% de la tarjeta está en la pantalla
@@ -41,7 +42,7 @@ function Home() {
           const visibleThresholdTop = viewportHeight * 0.8;
           const visibleThresholdBottom = -elementHeight * 0.8;
           
-          if (elementTop < visibleThresholdTop && elementTop > visibleThresholdBottom) {
+          if (isMobile && elementTop < visibleThresholdTop && elementTop > visibleThresholdBottom) {
             // Calculamos qué tan centrada está la tarjeta en la pantalla
             // 0 = borde superior/inferior, 1 = perfectamente centrada
             const distanceFromCenter = 1 - Math.abs((elementTop + elementHeight/2 - viewportHeight/2) / (viewportHeight/2 + elementHeight/2));
@@ -54,7 +55,7 @@ function Home() {
             // Aseguramos que la transición se aplique siempre
             ref.current.style.transition = 'transform 0.4s ease-out, border-color 0.4s ease, box-shadow 0.4s ease';
           } else {
-            // Reset cuando la tarjeta está fuera de la zona de activación
+            // Reset cuando la tarjeta está fuera de la zona de activación o en escritorio
             ref.current.style.transform = 'scale(1)';
             ref.current.style.zIndex = 'auto';
             ref.current.style.borderColor = '#293038';
@@ -157,10 +158,10 @@ function Home() {
             <Link to="/project/financial-family-api" className="flex flex-col gap-4 pb-3 group">
               <div
                 ref={projectRefs[0]}
-                className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl transform group-hover:scale-[1.02] transition-all duration-300 border border-[#293038] group-hover:border-[--violet-9] shadow-lg"
+                className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl transform md:group-hover:scale-100 group-hover:scale-[1.02] md:group-hover:translate-y-[-5px] transition-all duration-300 border border-[#293038] group-hover:border-[--violet-9] shadow-lg"
                 style={{
                   backgroundImage: 'url("/family_financial_api_photo.webp")',
-                  transition: 'transform 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease',
+                  transition: 'transform 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease, translate 0.5s ease',
                   transformOrigin: 'center center'
                 }}
               ></div>
@@ -172,10 +173,10 @@ function Home() {
             <Link to="/project/gym-api" className="flex flex-col gap-4 pb-3 group">
               <div
                 ref={projectRefs[1]}
-                className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl transform group-hover:scale-[1.02] transition-all duration-300 border border-[#293038] group-hover:border-[--violet-9] shadow-lg"
+                className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl transform md:group-hover:scale-100 group-hover:scale-[1.02] md:group-hover:translate-y-[-5px] transition-all duration-300 border border-[#293038] group-hover:border-[--violet-9] shadow-lg"
                 style={{
                   backgroundImage: 'url("/gym_api_photo.webp")',
-                  transition: 'transform 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease',
+                  transition: 'transform 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease, translate 0.5s ease',
                   transformOrigin: 'center center'
                 }}
               ></div>
@@ -187,10 +188,10 @@ function Home() {
             <Link to="/project/financial-family-telegram-bot" className="flex flex-col gap-4 pb-3 group">
               <div
                 ref={projectRefs[2]}
-                className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl transform group-hover:scale-[1.02] transition-all duration-300 border border-[#293038] group-hover:border-[--violet-9] shadow-lg"
+                className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl transform md:group-hover:scale-100 group-hover:scale-[1.02] md:group-hover:translate-y-[-5px] transition-all duration-300 border border-[#293038] group-hover:border-[--violet-9] shadow-lg"
                 style={{
                   backgroundImage: 'url("/telegra_bot_financial_family.webp")',
-                  transition: 'transform 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease',
+                  transition: 'transform 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease, translate 0.5s ease',
                   transformOrigin: 'center center'
                 }}
               ></div>
