@@ -16,7 +16,7 @@ function About() {
           <div className="md:col-span-1">
             <div className="flex justify-center mb-6 md:mb-4">
               <div
-                className="min-h-36 w-36 sm:min-h-48 sm:w-48 rounded-full overflow-hidden shadow-lg hover:scale-105 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)] transition-all duration-300 cursor-pointer flex-shrink-0 border-2 border-transparent hover:border-[#3B82F6]"
+                className="min-h-44 w-44 sm:min-h-48 sm:w-48 rounded-full overflow-hidden shadow-lg hover:scale-105 hover:shadow-[0_0_15px_rgba(var(--violet-9-rgb),0.4)] transition-all duration-300 cursor-pointer flex-shrink-0 border-2 border-transparent hover:border-[--violet-9]"
                 style={{
                   transformOrigin: 'center center',
                   transition: 'transform 0.5s ease, opacity 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease'

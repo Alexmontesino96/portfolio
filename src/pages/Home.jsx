@@ -28,8 +28,8 @@ function Home() {
           
           profileRef.current.style.transform = `scale(${scaleValue})`;
           profileRef.current.style.zIndex = '50';
-          profileRef.current.style.borderColor = '#3B82F6';
-          profileRef.current.style.boxShadow = '0 0 20px rgba(59, 130, 246, 0.4)';
+          profileRef.current.style.borderColor = 'var(--violet-9)';
+          profileRef.current.style.boxShadow = '0 0 20px rgba(var(--violet-9-rgb),0.4)';
         } else {
           // Reset cuando la imagen está fuera de la zona de activación
           profileRef.current.style.transform = 'scale(1)';
@@ -59,8 +59,8 @@ function Home() {
               
               ref.current.style.transform = `scale(${scaleValue})`;
               ref.current.style.zIndex = '40';
-              ref.current.style.borderColor = '#3B82F6';
-              ref.current.style.boxShadow = '0 0 15px rgba(59, 130, 246, 0.3)';
+              ref.current.style.borderColor = 'var(--violet-9)';
+              ref.current.style.boxShadow = '0 0 15px rgba(var(--violet-9-rgb),0.3)';
             } else {
               // Reset cuando la tarjeta está fuera de la zona de activación
               ref.current.style.transform = 'scale(1)';
@@ -86,7 +86,7 @@ function Home() {
               <div className="flex flex-col sm:flex-row gap-8 sm:gap-6 items-center">
                 <div
                   ref={profileRef}
-                  className="min-h-36 w-36 sm:min-h-48 sm:w-48 rounded-full overflow-hidden shadow-lg hover:scale-105 hover:shadow-[0_0_15px_rgba(180,180,180,0.35)] transition-all duration-300 cursor-pointer flex-shrink-0 mb-2 sm:mb-0 border-2 border-transparent"
+                  className="min-h-44 w-44 sm:min-h-48 sm:w-48 rounded-full overflow-hidden shadow-lg hover:scale-105 hover:shadow-[0_0_15px_rgba(var(--violet-9-rgb),0.4)] transition-all duration-300 cursor-pointer flex-shrink-0 mb-2 sm:mb-0 border-2 border-transparent"
                   style={{
                     transformOrigin: 'center center',
                     transition: 'transform 0.5s ease, opacity 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease'
@@ -135,7 +135,7 @@ function Home() {
             <Link to="/project/financial-family-api" className="flex flex-col gap-4 pb-3 group">
               <div
                 ref={projectRefs[1]}
-                className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl transform group-hover:scale-[1.02] transition-all duration-300 border border-[#293038] group-hover:border-[#3B82F6] shadow-lg"
+                className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl transform group-hover:scale-[1.02] transition-all duration-300 border border-[#293038] group-hover:border-[--violet-9] shadow-lg"
                 style={{
                   backgroundImage: 'url("/family_financial_api_photo.webp")',
                   transition: 'transform 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease',
@@ -150,7 +150,7 @@ function Home() {
             <Link to="/project/gym-api" className="flex flex-col gap-4 pb-3 group">
               <div
                 ref={projectRefs[2]}
-                className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl transform group-hover:scale-[1.02] transition-all duration-300 border border-[#293038] group-hover:border-[#3B82F6] shadow-lg"
+                className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl transform group-hover:scale-[1.02] transition-all duration-300 border border-[#293038] group-hover:border-[--violet-9] shadow-lg"
                 style={{
                   backgroundImage: 'url("/gym_api_photo.webp")',
                   transition: 'transform 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease',
@@ -164,7 +164,7 @@ function Home() {
             </Link>
             <Link to="/project/financial-family-telegram-bot" className="flex flex-col gap-4 pb-3 group">
               <div
-                className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl transform group-hover:scale-[1.02] transition-all duration-300 border border-[#293038] group-hover:border-[#3B82F6] shadow-lg"
+                className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl transform group-hover:scale-[1.02] transition-all duration-300 border border-[#293038] group-hover:border-[--violet-9] shadow-lg"
                 style={{
                   backgroundImage: 'url("/telegra_bot_financial_family.webp")',
                   transition: 'transform 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease',
@@ -233,7 +233,7 @@ function Home() {
             </div>
           </div>
           
-          <h2 className="text-white text-[28px] font-bold leading-tight tracking-[-0.015em] px-6 pb-6 pt-10 border-b border-[#293038]">Other Projects</h2>
+          <h2 className="text-white text-[28px] font-bold leading-tight tracking-[-0.015em] px-6 pb-6 pt-10 border-b border-[#293038] mb-8">Other Projects</h2>
           <div className="px-6 pt-3 mb-4">
             <Link to="/projects" className="text-[--violet-9] hover:text-[--violet-10] transition-colors text-sm flex items-center">
               <span>Ver todos los proyectos</span>
@@ -246,7 +246,7 @@ function Home() {
             <Link to="/project/supplies-order-predict" className="flex flex-col gap-4 pb-3 group">
               <div
                 ref={projectRefs[0]}
-                className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl transform group-hover:scale-[1.02] transition-all duration-300 border border-[#293038] group-hover:border-[#3B82F6] shadow-lg"
+                className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl transform group-hover:scale-[1.02] transition-all duration-300 border border-[#293038] group-hover:border-[--violet-9] shadow-lg"
                 style={{
                   backgroundImage: 'url("/order_predict.webp")',
                   transition: 'transform 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease',
@@ -261,7 +261,7 @@ function Home() {
             
             <a href="https://github.com/Alexmontesino96/DetailsFoodScanner" target="_blank" className="flex flex-col gap-4 pb-3 group">
               <div
-                className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl transform group-hover:scale-[1.02] transition-all duration-300 border border-[#293038] group-hover:border-[#3B82F6] shadow-lg"
+                className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl transform group-hover:scale-[1.02] transition-all duration-300 border border-[#293038] group-hover:border-[--violet-9] shadow-lg"
                 style={{
                   backgroundImage: 'url("/detail_food_scanner.webp")',
                   transition: 'transform 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease',
@@ -276,7 +276,7 @@ function Home() {
             
             <a href="https://github.com/Alexmontesino96/api-citas-medicas-main" target="_blank" className="flex flex-col gap-4 pb-3 group">
               <div
-                className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl transform group-hover:scale-[1.02] transition-all duration-300 border border-[#293038] group-hover:border-[#3B82F6] shadow-lg"
+                className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl transform group-hover:scale-[1.02] transition-all duration-300 border border-[#293038] group-hover:border-[--violet-9] shadow-lg"
                 style={{
                   backgroundImage: 'url("/api_medical.webp")',
                   transition: 'transform 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease',
