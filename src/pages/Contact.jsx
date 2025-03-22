@@ -251,7 +251,7 @@ function Contact() {
                       <button 
                         type="submit" 
                         disabled={formStatus.submitting} 
-                        className={`px-6 py-3 bg-gradient-to-b from-[--violet-9] to-[--violet-9] hover:to-[--violet-10] text-white font-bold rounded-xl transition-all border-t border-[rgba(255,255,255,0.21)] ${
+                        className={`px-6 py-3 bg-gradient-to-b from-[--violet-9] to-[--violet-9] text-white font-bold rounded-xl transition-all border-t border-[rgba(255,255,255,0.21)] ${
                           formStatus.submitting 
                           ? 'opacity-50 cursor-not-allowed' 
                           : 'hover:to-[--violet-10]'

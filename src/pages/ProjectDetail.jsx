@@ -573,7 +573,7 @@ function ProjectDetail() {
       <div className="layout-content-container flex flex-col w-full max-w-[1000px] flex-1">
         {/* Botón volver */}
         <div className="mb-4 sm:mb-6">
-          <Link to="/#work" className="inline-flex items-center text-[#3B82F6] hover:text-white transition-colors text-sm sm:text-base">
+          <Link to="/#work" className="inline-flex items-center text-[--violet-9] hover:text-[--violet-10] transition-colors text-sm sm:text-base">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256" className="mr-2">
               <path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
             </svg>
