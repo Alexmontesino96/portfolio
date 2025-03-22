@@ -158,7 +158,7 @@ function Home() {
             <Link to="/project/financial-family-api" className="flex flex-col gap-4 pb-3 group">
               <div
                 ref={projectRefs[0]}
-                className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl transform md:group-hover:scale-100 group-hover:scale-[1.02] md:group-hover:translate-y-[-5px] transition-all duration-300 border border-[#293038] group-hover:border-[--violet-9] shadow-lg"
+                className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl transform md:group-hover:scale-[1.05] group-hover:scale-[1.02] transition-all duration-300 border border-[#293038] group-hover:border-[--violet-9] shadow-lg md:group-hover:shadow-[0_0_15px_rgba(var(--violet-9-rgb),0.4)]"
                 style={{
                   backgroundImage: 'url("/family_financial_api_photo.webp")',
                   transition: 'transform 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease, translate 0.5s ease',
@@ -166,14 +166,14 @@ function Home() {
                 }}
               ></div>
               <div>
-                <p className="text-white text-lg font-semibold leading-tight mb-2">Financial Family API</p>
+                <p className="text-white text-lg font-semibold leading-tight mb-2 group-hover:text-[--violet-9] transition-colors">Financial Family API</p>
                 <p className="text-[#9dabb8] text-sm leading-normal">Family finance platform with transaction management and expense analysis.</p>
               </div>
             </Link>
             <Link to="/project/gym-api" className="flex flex-col gap-4 pb-3 group">
               <div
                 ref={projectRefs[1]}
-                className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl transform md:group-hover:scale-100 group-hover:scale-[1.02] md:group-hover:translate-y-[-5px] transition-all duration-300 border border-[#293038] group-hover:border-[--violet-9] shadow-lg"
+                className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl transform md:group-hover:scale-[1.05] group-hover:scale-[1.02] transition-all duration-300 border border-[#293038] group-hover:border-[--violet-9] shadow-lg md:group-hover:shadow-[0_0_15px_rgba(var(--violet-9-rgb),0.4)]"
                 style={{
                   backgroundImage: 'url("/gym_api_photo.webp")',
                   transition: 'transform 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease, translate 0.5s ease',
@@ -181,14 +181,14 @@ function Home() {
                 }}
               ></div>
               <div>
-                <p className="text-white text-lg font-semibold leading-tight mb-2">GymAPI</p>
+                <p className="text-white text-lg font-semibold leading-tight mb-2 group-hover:text-[--violet-9] transition-colors">GymAPI</p>
                 <p className="text-[#9dabb8] text-sm leading-normal">Robust API for gym management with membership and access control.</p>
               </div>
             </Link>
             <Link to="/project/financial-family-telegram-bot" className="flex flex-col gap-4 pb-3 group">
               <div
                 ref={projectRefs[2]}
-                className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl transform md:group-hover:scale-100 group-hover:scale-[1.02] md:group-hover:translate-y-[-5px] transition-all duration-300 border border-[#293038] group-hover:border-[--violet-9] shadow-lg"
+                className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl transform md:group-hover:scale-[1.05] group-hover:scale-[1.02] transition-all duration-300 border border-[#293038] group-hover:border-[--violet-9] shadow-lg md:group-hover:shadow-[0_0_15px_rgba(var(--violet-9-rgb),0.4)]"
                 style={{
                   backgroundImage: 'url("/telegra_bot_financial_family.webp")',
                   transition: 'transform 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease, translate 0.5s ease',
@@ -196,7 +196,7 @@ function Home() {
                 }}
               ></div>
               <div>
-                <p className="text-white text-lg font-semibold leading-tight mb-2">Financial Family Telegram Bot</p>
+                <p className="text-white text-lg font-semibold leading-tight mb-2 group-hover:text-[--violet-9] transition-colors">Financial Family Telegram Bot</p>
                 <p className="text-[#9dabb8] text-sm leading-normal">Bot de Telegram para gestión financiera familiar con interacción conversacional.</p>
               </div>
             </Link>
@@ -270,15 +270,15 @@ function Home() {
             <Link to="/project/supplies-order-predict" className="flex flex-col gap-4 pb-3 group">
               <div
                 ref={projectRefs[3]}
-                className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl transform group-hover:scale-[1.02] transition-all duration-300 border border-[#293038] group-hover:border-[--violet-9] shadow-lg"
+                className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl transform md:group-hover:scale-[1.05] group-hover:scale-[1.02] transition-all duration-300 border border-[#293038] group-hover:border-[--violet-9] shadow-lg md:group-hover:shadow-[0_0_15px_rgba(var(--violet-9-rgb),0.4)]"
                 style={{
                   backgroundImage: 'url("/order_predict.webp")',
-                  transition: 'transform 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease',
+                  transition: 'transform 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease, translate 0.5s ease',
                   transformOrigin: 'center center'
                 }}
               ></div>
               <div>
-                <p className="text-white text-lg font-semibold leading-tight mb-2">Supplies Order Predict</p>
+                <p className="text-white text-lg font-semibold leading-tight mb-2 group-hover:text-[--violet-9] transition-colors">Supplies Order Predict</p>
                 <p className="text-[#9dabb8] text-sm leading-normal">Inventory management and statistical analysis system using FastAPI, with order prediction capabilities.</p>
               </div>
             </Link>
@@ -286,15 +286,15 @@ function Home() {
             <a href="https://github.com/Alexmontesino96/DetailsFoodScanner" target="_blank" className="flex flex-col gap-4 pb-3 group">
               <div
                 ref={projectRefs[4]}
-                className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl transform group-hover:scale-[1.02] transition-all duration-300 border border-[#293038] group-hover:border-[--violet-9] shadow-lg"
+                className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl transform md:group-hover:scale-[1.05] group-hover:scale-[1.02] transition-all duration-300 border border-[#293038] group-hover:border-[--violet-9] shadow-lg md:group-hover:shadow-[0_0_15px_rgba(var(--violet-9-rgb),0.4)]"
                 style={{
                   backgroundImage: 'url("/detail_food_scanner.webp")',
-                  transition: 'transform 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease',
+                  transition: 'transform 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease, translate 0.5s ease',
                   transformOrigin: 'center center'
                 }}
               ></div>
               <div>
-                <p className="text-white text-lg font-semibold leading-tight mb-2">DetailsFoodScanner</p>
+                <p className="text-white text-lg font-semibold leading-tight mb-2 group-hover:text-[--violet-9] transition-colors">DetailsFoodScanner</p>
                 <p className="text-[#9dabb8] text-sm leading-normal">Smart scanner for nutritional information using computer vision and ML.</p>
               </div>
             </a>
@@ -302,15 +302,15 @@ function Home() {
             <a href="https://github.com/Alexmontesino96/api-citas-medicas-main" target="_blank" className="flex flex-col gap-4 pb-3 group">
               <div
                 ref={projectRefs[5]}
-                className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl transform group-hover:scale-[1.02] transition-all duration-300 border border-[#293038] group-hover:border-[--violet-9] shadow-lg"
+                className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl transform md:group-hover:scale-[1.05] group-hover:scale-[1.02] transition-all duration-300 border border-[#293038] group-hover:border-[--violet-9] shadow-lg md:group-hover:shadow-[0_0_15px_rgba(var(--violet-9-rgb),0.4)]"
                 style={{
                   backgroundImage: 'url("/api_medical.webp")',
-                  transition: 'transform 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease',
+                  transition: 'transform 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease, translate 0.5s ease',
                   transformOrigin: 'center center'
                 }}
               ></div>
               <div>
-                <p className="text-white text-lg font-semibold leading-tight mb-2">Advanced Medical API</p>
+                <p className="text-white text-lg font-semibold leading-tight mb-2 group-hover:text-[--violet-9] transition-colors">Advanced Medical API</p>
                 <p className="text-[#9dabb8] text-sm leading-normal">Medical appointment management system with doctor-patient interaction.</p>
               </div>
             </a>

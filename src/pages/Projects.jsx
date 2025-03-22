@@ -103,7 +103,7 @@ function Projects() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
           {Object.entries(projects).map(([id, project]) => (
             <div key={id} 
-              className={`${isDarkMode ? 'bg-[#161B22] border border-[#293038]' : 'bg-[#f0f0f0] border border-[#e0e0e0]'} rounded-xl overflow-hidden transform md:hover:scale-100 hover:scale-[1.02] md:hover:translate-y-[-5px] transition-all duration-300 shadow-lg group cursor-pointer`}
+              className={`${isDarkMode ? 'bg-[#161B22] border border-[#293038]' : 'bg-[#f0f0f0] border border-[#e0e0e0]'} rounded-xl overflow-hidden transform md:hover:scale-[1.05] hover:scale-[1.02] transition-all duration-300 shadow-lg group cursor-pointer md:hover:shadow-[0_0_15px_rgba(var(--violet-9-rgb),0.4)] hover:border-[--violet-9]`}
               onClick={() => {
                 if (project.externalLink) {
                   window.open(project.github, '_blank');
@@ -120,7 +120,7 @@ function Projects() {
               </div>
               
               <div className="p-5">
-                <h2 className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} text-xl font-bold mb-2`}>
+                <h2 className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} text-xl font-bold mb-2 group-hover:text-[--violet-9] transition-colors`}>
                   {project.title}
                 </h2>
                 
