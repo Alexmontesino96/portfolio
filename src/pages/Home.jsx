@@ -82,8 +82,8 @@ function Home() {
     <>
       <div className="px-4 sm:px-10 md:px-20 lg:px-40 flex flex-1 justify-center py-6 sm:py-10">
         <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
-          <div className="flex min-h-[90vh] sm:min-h-0 items-center p-4 sm:p-6 @container mb-6 sm:mb-8 md:mb-14" id="about">
-            <div className="flex w-full flex-col gap-6 @[520px]:flex-row @[520px]:justify-between @[520px]:items-center">
+          <div className="flex min-h-[90vh] sm:min-h-0 items-center p-4 pt-0 sm:p-6 @container mb-6 sm:mb-8 md:mb-14" id="about">
+            <div className="flex w-full flex-col gap-6 mt-8 sm:mt-0 @[520px]:flex-row @[520px]:justify-between @[520px]:items-center">
               <div className="flex flex-col sm:flex-row gap-6 items-center">
                 <div
                   ref={profileRef}
