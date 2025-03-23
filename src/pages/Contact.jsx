@@ -32,39 +32,28 @@ function Contact() {
     });
 
     try {
-      // Enviar datos del formulario a Formspree
-      const response = await fetch('https://formspree.io/f/xleqezlp', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      });
-
-      if (!response.ok) {
-        throw new Error('Error al enviar el mensaje. Por favor, inténtalo de nuevo.');
-      }
-
-      // Si todo va bien, actualizar el estado para mostrar éxito
+      // Crear el enlace mailto con los datos del formulario
+      const subject = encodeURIComponent(formData.subject);
+      const body = encodeURIComponent(`Nombre: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`);
+      const mailtoLink = `mailto:alexmontesinocastro9@gmail.com?subject=${subject}&body=${body}`;
+      
+      // Abrir el cliente de correo predeterminado
+      window.location.href = mailtoLink;
+      
+      // Actualizar el estado para mostrar éxito
       setFormStatus({
         submitting: false,
         submitted: true,
         error: null
       });
       
-      // Resetear el formulario
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
+      // No reseteamos el formulario ya que el usuario podría querer modificarlo en su cliente de correo
     } catch (error) {
-      console.error('Error al enviar el formulario:', error);
+      console.error('Error al procesar el formulario:', error);
       setFormStatus({
         submitting: false,
         submitted: false,
-        error: error.message || 'Ocurrió un error al enviar el mensaje.'
+        error: error.message || 'Ocurrió un error al procesar el mensaje.'
       });
     }
   };
@@ -173,9 +162,9 @@ function Contact() {
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
-                      <span className="font-medium">¡Mensaje enviado con éxito!</span>
+                      <span className="font-medium">¡Formulario procesado correctamente!</span>
                     </div>
-                    <p className="mt-2 text-sm">Gracias por tu mensaje. Te responderé lo antes posible.</p>
+                    <p className="mt-2 text-sm">Se ha abierto tu cliente de correo. Revisa los datos y envía el mensaje para completar el proceso.</p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
