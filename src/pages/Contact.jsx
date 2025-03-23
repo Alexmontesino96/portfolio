@@ -23,7 +23,7 @@ function Contact() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setFormStatus({
       submitting: true,
@@ -31,21 +31,42 @@ function Contact() {
       error: null
     });
 
-    // Simulación de envío (en un caso real, aquí iría la lógica para enviar el formulario)
-    setTimeout(() => {
+    try {
+      // Enviar datos del formulario a Formspree
+      const response = await fetch('https://formspree.io/f/xleqezlp', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (!response.ok) {
+        throw new Error('Error al enviar el mensaje. Por favor, inténtalo de nuevo.');
+      }
+
+      // Si todo va bien, actualizar el estado para mostrar éxito
       setFormStatus({
         submitting: false,
         submitted: true,
         error: null
       });
-      // Resetear el formulario después de enviarlo
+      
+      // Resetear el formulario
       setFormData({
         name: '',
         email: '',
         subject: '',
         message: ''
       });
-    }, 1500);
+    } catch (error) {
+      console.error('Error al enviar el formulario:', error);
+      setFormStatus({
+        submitting: false,
+        submitted: false,
+        error: error.message || 'Ocurrió un error al enviar el mensaje.'
+      });
+    }
   };
 
   return (
@@ -158,6 +179,17 @@ function Contact() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
+                    {formStatus.error && (
+                      <div className="bg-red-50 border border-red-200 text-red-700 rounded-xl p-4 mb-6">
+                        <div className="flex items-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                          </svg>
+                          <span className="font-medium">Error al enviar el mensaje</span>
+                        </div>
+                        <p className="mt-2 text-sm">{formStatus.error}</p>
+                      </div>
+                    )}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div>
                         <label 
