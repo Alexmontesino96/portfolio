@@ -37,7 +37,7 @@ function About() {
     <div className="px-4 sm:px-6 md:px-10 lg:px-20 xl:px-40 flex flex-1 justify-center py-10">
       <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
         <h1 className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} text-[32px] font-bold leading-tight tracking-[-0.015em] mb-8 text-center sm:text-left`}>
-          Sobre Mí
+          About Me
         </h1>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
@@ -60,7 +60,7 @@ function About() {
             </div>
             
             <div className={`p-4 rounded-xl ${isDarkMode ? 'bg-[#161B22] border border-[#293038]' : 'bg-[#f0f0f0] border border-[#e0e0e0]'} mb-6`}>
-              <h3 className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} text-lg font-bold mb-3`}>Contacto</h3>
+              <h3 className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} text-lg font-bold mb-3`}>Contact</h3>
               <ul className="space-y-2">
                 <li>
                   <a 
@@ -123,55 +123,55 @@ function About() {
           <div className="md:col-span-2">
             <div className={`${isDarkMode ? 'text-[#9dabb8]' : 'text-[#666]'} space-y-4`}>
               <p>
-                Mi camino es poco convencional: formado como artista, descubrí mi verdadera pasión en el código. Siempre sentí atracción por la tecnología y la resolución de problemas, lo que me llevó a aprender desarrollo de software de manera autodidacta.
+                My path is unconventional: trained as an artist, I discovered my true passion in code. I always felt drawn to technology and problem-solving, which led me to learn software development on my own.
               </p>
               
               <p>
-                Me motiva crear soluciones elegantes a problemas complejos, aprovechando mi perspectiva artística para ver patrones y estructuras en el código.
+                I'm motivated by creating elegant solutions to complex problems, leveraging my artistic perspective to see patterns and structures in code.
               </p>
               
               <p>
-                En los últimos cinco años, me he enfocado en backend y APIs, participando en proyectos diversos desde finanzas hasta bots conversacionales, especializándome en Python y arquitecturas escalables para transformar ideas en soluciones simples y efectivas.
+                In the last five years, I've focused on backend and APIs, participating in diverse projects from finance to conversational bots, specializing in Python and scalable architectures to transform ideas into simple and effective solutions.
               </p>
               
-              <h2 className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} text-xl font-bold mt-8 mb-4`}>Experiencia Profesional</h2>
+              <h2 className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} text-xl font-bold mt-8 mb-4`}>Professional Experience</h2>
               
               <div className={`${isDarkMode ? 'bg-[#161B22] border border-[#293038]' : 'bg-[#f0f0f0] border border-[#e0e0e0]'} rounded-xl p-4 mb-4`}>
-                <h3 className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} font-bold`}>Desarrollador Backend Senior</h3>
-                <p className="text-sm text-[--violet-9]">TechSolutions Inc. · 2020 - Presente</p>
+                <h3 className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} font-bold`}>Senior Backend Developer</h3>
+                <p className="text-sm text-[--violet-9]">TechSolutions Inc. · 2020 - Present</p>
                 <ul className={`${isDarkMode ? 'text-[#9dabb8]' : 'text-[#666]'} mt-2 list-disc pl-5 text-sm space-y-1`}>
-                  <li>Desarrollo y mantenimiento de APIs RESTful para servicios financieros.</li>
-                  <li>Optimización de consultas a bases de datos y mejora del rendimiento del sistema.</li>
-                  <li>Implementación de CI/CD con GitHub Actions y Docker.</li>
+                  <li>Development and maintenance of RESTful APIs for financial services.</li>
+                  <li>Optimization of database queries and improvement of system performance.</li>
+                  <li>Implementation of CI/CD with GitHub Actions and Docker.</li>
                 </ul>
               </div>
               
               <div className={`${isDarkMode ? 'bg-[#161B22] border border-[#293038]' : 'bg-[#f0f0f0] border border-[#e0e0e0]'} rounded-xl p-4 mb-4`}>
-                <h3 className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} font-bold`}>Desarrollador Python</h3>
+                <h3 className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} font-bold`}>Python Developer</h3>
                 <p className="text-sm text-[--violet-9]">DataCorp · 2018 - 2020</p>
                 <ul className={`${isDarkMode ? 'text-[#9dabb8]' : 'text-[#666]'} mt-2 list-disc pl-5 text-sm space-y-1`}>
-                  <li>Desarrollo de microservicios con Python y FastAPI.</li>
-                  <li>Integración con sistemas de terceros mediante APIs.</li>
-                  <li>Implementación de algoritmos de procesamiento de datos.</li>
+                  <li>Development of microservices with Python and FastAPI.</li>
+                  <li>Integration with third-party systems through APIs.</li>
+                  <li>Implementation of data processing algorithms.</li>
                 </ul>
               </div>
               
-              <h2 className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} text-xl font-bold mt-8 mb-4`}>Educación</h2>
+              <h2 className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} text-xl font-bold mt-8 mb-4`}>Education</h2>
               
               <div className={`${isDarkMode ? 'bg-[#161B22] border border-[#293038]' : 'bg-[#f0f0f0] border border-[#e0e0e0]'} rounded-xl p-4 mb-4`}>
-                <h3 className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} font-bold`}>Licenciatura en Artes</h3>
-                <p className="text-sm text-[--violet-9]">Universidad de Bellas Artes · 2014 - 2018</p>
+                <h3 className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} font-bold`}>Bachelor of Arts</h3>
+                <p className="text-sm text-[--violet-9]">University of Fine Arts · 2014 - 2018</p>
               </div>
             </div>
           </div>
         </div>
         
         <div className={`${isDarkMode ? 'bg-[#161B22] border border-[#293038]' : 'bg-[#f0f0f0] border border-[#e0e0e0]'} rounded-xl p-4 sm:p-6 mb-8`}>
-          <h2 className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} text-xl font-bold mb-4 text-center sm:text-left`}>Habilidades Técnicas</h2>
+          <h2 className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} text-xl font-bold mb-4 text-center sm:text-left`}>Technical Skills</h2>
           
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
             <div className="mb-3">
-              <h3 className={`${isDarkMode ? 'text-[--violet-9]' : 'text-[--violet-9]'} font-bold mb-2 text-sm sm:text-base`}>Lenguajes</h3>
+              <h3 className={`${isDarkMode ? 'text-[--violet-9]' : 'text-[--violet-9]'} font-bold mb-2 text-sm sm:text-base`}>Languages</h3>
               <ul className={`${isDarkMode ? 'text-[#9dabb8]' : 'text-[#666]'} list-disc pl-5 text-xs sm:text-sm space-y-1`}>
                 <li>Python</li>
                 <li>JavaScript/TypeScript</li>
@@ -191,7 +191,7 @@ function About() {
             </div>
             
             <div className="mb-3">
-              <h3 className={`${isDarkMode ? 'text-[--violet-9]' : 'text-[--violet-9]'} font-bold mb-2 text-sm sm:text-base`}>Bases de Datos</h3>
+              <h3 className={`${isDarkMode ? 'text-[--violet-9]' : 'text-[--violet-9]'} font-bold mb-2 text-sm sm:text-base`}>Databases</h3>
               <ul className={`${isDarkMode ? 'text-[#9dabb8]' : 'text-[#666]'} list-disc pl-5 text-xs sm:text-sm space-y-1`}>
                 <li>PostgreSQL</li>
                 <li>MongoDB</li>
@@ -211,7 +211,7 @@ function About() {
             </div>
             
             <div className="mb-3">
-              <h3 className={`${isDarkMode ? 'text-[--violet-9]' : 'text-[--violet-9]'} font-bold mb-2 text-sm sm:text-base`}>Herramientas</h3>
+              <h3 className={`${isDarkMode ? 'text-[--violet-9]' : 'text-[--violet-9]'} font-bold mb-2 text-sm sm:text-base`}>Tools</h3>
               <ul className={`${isDarkMode ? 'text-[#9dabb8]' : 'text-[#666]'} list-disc pl-5 text-xs sm:text-sm space-y-1`}>
                 <li>Git</li>
                 <li>Postman</li>
@@ -233,13 +233,13 @@ function About() {
         </div>
         
         <div className="flex flex-col items-center justify-center px-4 sm:px-6 py-8 sm:py-10 bg-[#161B22] rounded-xl mb-6 border border-[#293038]">
-          <h2 className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-center`}>¿Interesado en colaborar?</h2>
+          <h2 className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-center`}>Interested in collaborating?</h2>
           <p className={`${isDarkMode ? 'text-[#9dabb8]' : 'text-[#666]'} text-center max-w-lg mb-5 sm:mb-6 text-sm sm:text-base`}>
-            Estoy siempre abierto a nuevas oportunidades y proyectos interesantes. Si tienes alguna idea o propuesta, no dudes en contactarme.
+            I'm always open to new opportunities and interesting projects. If you have any ideas or proposals, don't hesitate to contact me.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
             <Link to="/contact" className="flex items-center justify-center rounded-xl h-11 px-5 sm:px-6 bg-gradient-to-b from-[--violet-9] to-[--violet-9] hover:to-[--violet-10] text-white font-medium transition-all border-t border-[rgba(255,255,255,0.21)] w-full sm:w-auto">
-              <span>Contactar</span>
+              <span>Contact</span>
             </Link>
           </div>
         </div>

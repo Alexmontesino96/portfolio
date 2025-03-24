@@ -73,7 +73,7 @@ function Contact() {
     <div className="px-4 sm:px-6 md:px-10 lg:px-20 xl:px-40 flex flex-1 justify-center py-10">
       <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
         <h1 className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} text-[32px] font-bold leading-tight tracking-[-0.015em] mb-8`}>
-          Contacto
+          Contact
         </h1>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
@@ -81,7 +81,7 @@ function Contact() {
             <div className={`rounded-xl overflow-hidden ${isDarkMode ? 'bg-[#161B22] border border-[#293038]' : 'bg-[#f0f0f0] border border-[#e0e0e0]'}`}>
               <div className="p-6">
                 <h2 className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} text-xl font-bold mb-4`}>
-                  Información de Contacto
+                  Contact Information
                 </h2>
                 <div className={`${isDarkMode ? 'text-[#9dabb8]' : 'text-[#666]'} space-y-4`}>
                   <div className="flex items-start gap-3">
@@ -89,7 +89,7 @@ function Contact() {
                       <path d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z" />
                     </svg>
                     <div>
-                      <h3 className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} font-bold text-sm mb-1`}>Ubicación</h3>
+                      <h3 className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} font-bold text-sm mb-1`}>Location</h3>
                       <p className="text-sm">Miami, Florida</p>
                     </div>
                   </div>
@@ -124,7 +124,7 @@ function Contact() {
 
                 <div className="mt-8">
                   <h2 className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} text-lg font-bold mb-4`}>
-                    Redes Sociales
+                    Social Media
                   </h2>
                   <div className="flex gap-4">
                     <a 
@@ -164,7 +164,7 @@ function Contact() {
             <div className={`rounded-xl overflow-hidden ${isDarkMode ? 'bg-[#161B22] border border-[#293038]' : 'bg-[#f0f0f0] border border-[#e0e0e0]'}`}>
               <div className="p-6">
                 <h2 className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} text-xl font-bold mb-6`}>
-                  Envíame un mensaje
+                  Send me a message
                 </h2>
                 
                 {formStatus.submitted ? (
@@ -173,9 +173,9 @@ function Contact() {
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
-                      <span className="font-medium">¡Mensaje enviado con éxito!</span>
+                      <span className="font-medium">Message sent successfully!</span>
                     </div>
-                    <p className="mt-2 text-sm">Gracias por tu mensaje. Te responderé lo antes posible.</p>
+                    <p className="mt-2 text-sm">Thank you for your message. I will respond as soon as possible.</p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
@@ -185,7 +185,7 @@ function Contact() {
                           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
                             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
                           </svg>
-                          <span className="font-medium">Error al enviar el mensaje</span>
+                          <span className="font-medium">Error sending message</span>
                         </div>
                         <p className="mt-2 text-sm">{formStatus.error}</p>
                       </div>
@@ -196,7 +196,7 @@ function Contact() {
                           htmlFor="name" 
                           className={`block text-sm font-medium mb-2 ${isDarkMode ? 'text-[#9dabb8]' : 'text-[#666]'}`}
                         >
-                          Nombre
+                          Name
                         </label>
                         <input
                           type="text"
@@ -240,7 +240,7 @@ function Contact() {
                         htmlFor="subject" 
                         className={`block text-sm font-medium mb-2 ${isDarkMode ? 'text-[#9dabb8]' : 'text-[#666]'}`}
                       >
-                        Asunto
+                        Subject
                       </label>
                       <input
                         type="text"
@@ -262,7 +262,7 @@ function Contact() {
                         htmlFor="message" 
                         className={`block text-sm font-medium mb-2 ${isDarkMode ? 'text-[#9dabb8]' : 'text-[#666]'}`}
                       >
-                        Mensaje
+                        Message
                       </label>
                       <textarea
                         id="message"
@@ -289,7 +289,7 @@ function Contact() {
                           : 'hover:to-[--violet-10]'
                         }`}
                       >
-                        {formStatus.submitting ? 'Enviando...' : 'Enviar mensaje'}
+                        {formStatus.submitting ? 'Sending...' : 'Send message'}
                       </button>
                     </div>
                   </form>

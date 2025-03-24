@@ -6,7 +6,7 @@ function Footer() {
   
   return (
     <footer className={`py-8 px-6 ${isDarkMode ? 'text-[#9dabb8]' : 'text-[#555]'} text-center text-sm`}>
-      <p>© {new Date().getFullYear()} Alex Montesino. Todos los derechos reservados.</p>
+      <p>© {new Date().getFullYear()} Alex Montesino. All rights reserved.</p>
     </footer>
   );
 }

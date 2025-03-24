@@ -7,8 +7,8 @@ const StartHandlerModule = () => {
         <p className="text-white text-lg font-medium">Financial Family Telegram Bot</p>
       </div>
       <p className="text-[#9dabb8] mb-4">
-        Bot conversacional para Telegram que permite gestionar finanzas familiares, registrar gastos compartidos
-        y visualizar balances entre miembros de la familia con una interfaz intuitiva.
+        Conversational Telegram bot that allows managing family finances, recording shared expenses
+        and visualizing balances between family members with an intuitive interface.
       </p>
       <pre className="overflow-x-auto text-[#9dabb8] text-sm p-4 bg-[#0D1117] rounded-md">
 {`from aiogram import Bot, Dispatcher, types, executor
@@ -25,8 +25,8 @@ import asyncio
 import logging
 
 class FinancialFamilyBot:
-    """Bot de Telegram para gestión de finanzas familiares con integración 
-    a Financial Family API y sistema conversacional intuitivo"""
+    """Telegram bot for family finance management with integration 
+    to Financial Family API and intuitive conversational system"""
     
     def __init__(self, token, api_client):
         self.bot = Bot(token=token)
@@ -34,19 +34,19 @@ class FinancialFamilyBot:
         self.api_client = api_client
         self.logger = logging.getLogger("telegram_bot")
         
-        # Registrar handlers`}
+        # Register handlers`}
       </pre>
       
       <div className="mt-8">
-        <h3 className="text-[--violet-9] text-lg font-bold mb-3">⭐ Código Destacado</h3>
+        <h3 className="text-[--violet-9] text-lg font-bold mb-3">⭐ Featured Code</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           
           {/* Recomendación personalizada */}
           <div className="bg-[#0D1117] p-4 rounded-md border border-[#293038]">
-            <p className="text-[--violet-9] font-bold mb-2">Sistema de Conversación</p>
+            <p className="text-[--violet-9] font-bold mb-2">Conversation System</p>
             <pre className="overflow-x-auto text-[#9dabb8] text-xs">
 {`class ExpenseForm(StatesGroup):
-    """Máquina de estados para el registro de gastos"""
+    """State machine for expense registration"""
     family_selection = State()
     expense_type = State()
     expense_amount = State()
@@ -56,68 +56,68 @@ class FinancialFamilyBot:
     confirmation = State()
 
 async def cmd_add_expense(message: types.Message):
-    """Handler para iniciar el proceso de registro de gastos"""
-    # Obtener familias disponibles para el usuario
+    """Handler to start the expense registration process"""
+    # Get available families for the user
     user_id = message.from_user.id
     families = await api_client.get_user_families(user_id)
     
     if not families:
         await message.answer(
-            "No perteneces a ninguna familia. Usa /create_family para crear una."
+            "You don't belong to any family. Use /create_family to create one."
         )
         return
         
-    # Mostrar teclado con familias disponibles
+    # Show keyboard with available families
     keyboard = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
     for family in families:
         keyboard.add(KeyboardButton(family["name"]))
     
-    # Iniciar máquina de estados
+    # Start state machine
     await ExpenseForm.family_selection.set()
-    await message.answer("Selecciona la familia:", reply_markup=keyboard)`}
+    await message.answer("Select family:", reply_markup=keyboard)`}
             </pre>
           </div>
           
           {/* Puntuación de candidatos */}
           <div className="bg-[#0D1117] p-4 rounded-md border border-[#293038]">
-            <p className="text-[--violet-9] font-bold mb-2">Generación de Informes</p>
+            <p className="text-[--violet-9] font-bold mb-2">Report Generation</p>
             <pre className="overflow-x-auto text-[#9dabb8] text-xs">
 {`async def generate_balance_report(family_id: int, 
                            period: str = "month",
                            format_type: str = "text") -> str:
     """
-    Genera un informe de balances para la familia
+    Generates a balance report for the family
     """
-    # Obtener balances de la API
+    # Get balances from API
     balances = await api_client.get_balances(family_id, period)
     members = await api_client.get_family_members(family_id)
     
-    # Crear diccionario de nombres para referencias más amigables
+    # Create name dictionary for more friendly references
     member_names = {m["id"]: m["name"] for m in members}
     
-    # Generar informe según formato solicitado
+    # Generate report according to requested format
     if format_type == "text":
         return generate_text_report(balances, member_names)
     elif format_type == "graph":
-        # Generar gráfico con matplotlib y enviarlo como imagen
+        # Generate graph with matplotlib and send as image
         image_path = generate_graph_report(balances, member_names)
         return image_path
     else:
-        raise ValueError(f"Formato no soportado: {format_type}")`}
+        raise ValueError(f"Unsupported format: {format_type}")`}
             </pre>
           </div>
           
           {/* Algoritmo de diversidad */}
           <div className="bg-[#0D1117] p-4 rounded-md border border-[#293038]">
-            <p className="text-[--violet-9] font-bold mb-2">Gestión de Grupos</p>
+            <p className="text-[--violet-9] font-bold mb-2">Group Management</p>
             <pre className="overflow-x-auto text-[#9dabb8] text-xs">
 {`async def create_family_group(message: types.Message, state: FSMContext):
-    """Crea un nuevo grupo familiar y genera código QR de invitación"""
+    """Creates a new family group and generates QR invitation code"""
     user_id = message.from_user.id
     user_data = await state.get_data()
     family_name = user_data["family_name"]
     
-    # Crear familia en la API
+    # Create family in API
     try:
         family = await api_client.create_family(
             name=family_name,
@@ -125,28 +125,28 @@ async def cmd_add_expense(message: types.Message):
             admin_name=message.from_user.full_name
         )
         
-        # Generar código QR de invitación
+        # Generate invitation QR code
         invite_code = family["invite_code"]
         qr_image = QRGenerator.generate_invite_qr(invite_code)
         
-        # Enviar código QR al usuario
+        # Send QR code to user
         await bot.send_photo(
             chat_id=message.chat.id,
             photo=qr_image,
-            caption=f"Familia '{family_name}' creada correctamente.\n"
-                   f"Comparte este código QR para invitar miembros:\n"
-                   f"Código: {invite_code}"
+            caption=f"Family '{family_name}' created successfully.\n"
+                   f"Share this QR code to invite members:\n"
+                   f"Code: {invite_code}"
         )
         
     except Exception as e:
-        logger.error(f"Error al crear familia: {e}")
-        await message.answer("Error al crear la familia. Intenta de nuevo.")`}
+        logger.error(f"Error creating family: {e}")
+        await message.answer("Error creating family. Please try again.")`}
             </pre>
           </div>
           
           {/* Adaptación Energética */}
           <div className="bg-[#0D1117] p-4 rounded-md border border-[#293038]">
-            <p className="text-[--violet-9] font-bold mb-2">División de Gastos</p>
+            <p className="text-[--violet-9] font-bold mb-2">Expense Splitting</p>
             <pre className="overflow-x-auto text-[#9dabb8] text-xs">
 {`async def process_expense_split(expense_data: dict, split_type: str):
     """Procesa la división de un gasto entre miembros"""
@@ -177,7 +177,7 @@ async def cmd_add_expense(message: types.Message):
           
           {/* Detección de Anomalías */}
           <div className="bg-[#0D1117] p-4 rounded-md border border-[#293038] md:col-span-2">
-            <p className="text-[--violet-9] font-bold mb-2">Visualización de Datos</p>
+            <p className="text-[--violet-9] font-bold mb-2">Visualization of Data</p>
             <pre className="overflow-x-auto text-[#9dabb8] text-xs">
 {`async def generate_monthly_overview(chat_id: int, family_id: int):
     """Genera y envía un resumen visual mensual de gastos"""
@@ -232,24 +232,24 @@ async def cmd_add_expense(message: types.Message):
       </div>
 
       <div className="mt-6">
-        <h3 className="text-[--violet-9] text-lg font-bold mb-3">Funcionalidades Principales</h3>
+        <h3 className="text-[--violet-9] text-lg font-bold mb-3">Main Features</h3>
         <ul className="list-disc pl-5 text-[#9dabb8] space-y-2">
-          <li><strong>Gestión de grupos familiares:</strong> Creación de familias, invitación de miembros mediante códigos QR y administración de permisos.</li>
-          <li><strong>Registro de gastos compartidos:</strong> Sistema conversacional para registrar gastos con diferentes métodos de división entre miembros.</li>
-          <li><strong>Visualización de balances:</strong> Reportes de saldos actuales, estados de deuda y crédito entre miembros de la familia.</li>
-          <li><strong>Informes gráficos:</strong> Generación de gráficos y visualizaciones de gastos por categoría, miembro y periodo.</li>
-          <li><strong>Recordatorios de pagos:</strong> Sistema automático de notificaciones para recordar deudas pendientes y pagos recurrentes.</li>
+          <li><strong>Family Group Management:</strong> Family creation, member invitation via QR codes, and permission management.</li>
+          <li><strong>Shared Expense Recording:</strong> Conversational system for recording expenses with different methods of division between members.</li>
+          <li><strong>Balance Visualization:</strong> Current balance, debt and credit status reports between family members.</li>
+          <li><strong>Graphical Reports:</strong> Generation of graphical and visual expense reports by category, member, and period.</li>
+          <li><strong>Payment Reminders:</strong> Automatic system for notifying pending debts and recurring payments.</li>
         </ul>
       </div>
       <div className="mt-6">
-        <h3 className="text-[--violet-9] text-lg font-bold mb-3">Conceptos Técnicos</h3>
+        <h3 className="text-[--violet-9] text-lg font-bold mb-3">Technical Concepts</h3>
         <div className="bg-[#0D1117] p-4 rounded-md">
           <ul className="list-disc pl-5 text-[#9dabb8] space-y-2">
-            <li><strong>Máquinas de estado:</strong> Implementación de flujos conversacionales complejos con aiogram y FSM.</li>
-            <li><strong>Integración API:</strong> Comunicación asíncrona con la Financial Family API para sincronización de datos.</li>
-            <li><strong>Generación dinámica de UI:</strong> Creación de teclados y botones adaptados al contexto de cada conversación.</li>
-            <li><strong>Procesamiento de imágenes:</strong> Generación de gráficos y códigos QR para mejorar la experiencia del usuario.</li>
-            <li><strong>Middleware personalizado:</strong> Sistema de filtros y handlers para control de acceso y validación de datos.</li>
+            <li><strong>State Machines:</strong> Implementation of complex conversational flows with aiogram and FSM.</li>
+            <li><strong>API Integration:</strong> Asynchronous communication with the Financial Family API for data synchronization.</li>
+            <li><strong>Dynamic UI Generation:</strong> Creation of keyboards and buttons adapted to each conversation context.</li>
+            <li><strong>Image Processing:</strong> Generation of graphical and QR codes to enhance user experience.</li>
+            <li><strong>Custom Middleware:</strong> System of filters and handlers for access control and data validation.</li>
           </ul>
         </div>
       </div>

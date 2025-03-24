@@ -7,27 +7,27 @@ const GymApiModule = () => {
         <p className="text-white text-base sm:text-lg font-medium">GymAPI</p>
       </div>
       <p className="text-[#9dabb8] text-sm mb-4">
-        Este sistema de gestión para gimnasios implementa una arquitectura modular con modelos
-        relacionales y servicios especializados para manejar usuarios, eventos, entrenamientos y comunicaciones.
+        This gym management system implements a modular architecture with relational models
+        and specialized services to handle users, events, workouts and communications.
       </p>
 
       <div className="mt-6 sm:mt-8">
-        <h3 className="text-[--violet-9] text-base sm:text-lg font-bold mb-3">⭐ Código Destacado</h3>
+        <h3 className="text-[--violet-9] text-base sm:text-lg font-bold mb-3">⭐ Featured Code</h3>
         <div className="grid grid-cols-1 gap-3 sm:gap-4">
           
           {/* Modelo relacional con enumeraciones tipadas */}
           <div className="bg-[#0D1117] p-3 sm:p-4 rounded-md border border-[#293038]">
-            <p className="text-[--violet-9] font-bold mb-2 text-sm">Modelo relacional con enumeraciones tipadas</p>
+            <p className="text-[--violet-9] font-bold mb-2 text-sm">Relational model with typed enumerations</p>
             <pre className="overflow-x-auto text-[#9dabb8] text-xs">
 {`class EventStatus(str, enum.Enum):
-    """Estado del evento."""
-    SCHEDULED = "SCHEDULED"  # Evento programado
-    CANCELLED = "CANCELLED"  # Evento cancelado
-    COMPLETED = "COMPLETED"  # Evento completado
+    """Event status."""
+    SCHEDULED = "SCHEDULED"  # Scheduled event
+    CANCELLED = "CANCELLED"  # Cancelled event
+    COMPLETED = "COMPLETED"  # Completed event
 
 
 class Event(Base):
-    """Modelo para eventos."""
+    """Event model."""
     __tablename__ = "events"
 
     id = Column(Integer, primary_key=True, index=True)
@@ -36,10 +36,10 @@ class Event(Base):
     start_time = Column(DateTime, nullable=False)
     end_time = Column(DateTime, nullable=False)
     
-    # Estado del evento usando enumeración tipada
+    # Event status using typed enumeration
     status = Column(Enum(EventStatus), default=EventStatus.SCHEDULED)
     
-    # Relaciones con otras entidades
+    # Relationships with other entities
     creator_id = Column(Integer, ForeignKey("user.id"), nullable=False)
     creator = relationship("User", back_populates="created_events")
     participants = relationship("EventParticipation", cascade="all, delete-orphan")`}
@@ -48,38 +48,38 @@ class Event(Base):
           
           {/* Gestión de Relaciones con validación multinivel */}
           <div className="bg-[#0D1117] p-3 sm:p-4 rounded-md border border-[#293038]">
-            <p className="text-[--violet-9] font-bold mb-2 text-sm">Gestión de relaciones con validación multinivel</p>
+            <p className="text-[--violet-9] font-bold mb-2 text-sm">Relationship management with multi-level validation</p>
             <pre className="overflow-x-auto text-[#9dabb8] text-xs">
 {`def create_relationship(
     self, db: Session, relationship_in: TrainerMemberRelationshipCreate, created_by_id: int
 ):
-    """Crear una nueva relación entre un entrenador y un miembro."""
+    """Create a new relationship between a trainer and a member."""
     
-    # Validación en cascada:
+    # Cascade validation:
     
-    # 1. Verificar rol y existencia del entrenador
+    # 1. Verify role and existence of trainer
     trainer = user_repository.get(db, id=relationship_in.trainer_id)
     if not trainer or trainer.role != UserRole.TRAINER:
-        raise HTTPException(status_code=400, detail="Entrenador inválido")
+        raise HTTPException(status_code=400, detail="Invalid trainer")
     
-    # 2. Verificar rol y existencia del miembro
+    # 2. Verify role and existence of member
     member = user_repository.get(db, id=relationship_in.member_id)
     if not member or member.role != UserRole.MEMBER:
-        raise HTTPException(status_code=400, detail="Miembro inválido")
+        raise HTTPException(status_code=400, detail="Invalid member")
     
-    # 3. Verificar relación duplicada
+    # 3. Check for duplicate relationship
     existing = trainer_member_repository.get_by_trainer_and_member(
         db, trainer_id=relationship_in.trainer_id, member_id=relationship_in.member_id
     )
     
-    # Crear relación solo si todas las validaciones son correctas
+    # Create relationship only if all validations pass
     # ...`}
             </pre>
           </div>
           
           {/* API asíncrona con WebSockets para chat en tiempo real */}
           <div className="bg-[#0D1117] p-3 sm:p-4 rounded-md border border-[#293038]">
-            <p className="text-[--violet-9] font-bold mb-2 text-sm">API asíncrona con WebSockets para chat en tiempo real</p>
+            <p className="text-[--violet-9] font-bold mb-2 text-sm">Asynchronous API with WebSockets for real-time chat</p>
             <pre className="overflow-x-auto text-[#9dabb8] text-xs">
 {`@router.websocket("/ws/{chat_room_id}")
 async def websocket_endpoint(
@@ -88,29 +88,29 @@ async def websocket_endpoint(
     db: Session = Depends(get_db),
     current_user: Auth0User = Depends(get_current_user_ws)
 ):
-    """Endpoint WebSocket para chat en tiempo real"""
+    """WebSocket endpoint for real-time chat"""
     await connection_manager.connect(websocket, chat_room_id, current_user.id)
     
     try:
-        # Verificar acceso a la sala
+        # Verify access to the room
         if not await chat_service.user_has_access_to_room(...):
             await connection_manager.disconnect(...)
             return
             
-        # Notificar a otros usuarios sobre la conexión
+        # Notify other users about the connection
         await connection_manager.broadcast_to_room(
             chat_room_id,
             {"type": "user_joined", "user_id": current_user.id, ...}
         )
         
-        # Ciclo de escucha de mensajes
+        # Message listening loop
         while True:
             data = await websocket.receive_json()
-            # Procesar y transmitir mensaje
+            # Process and transmit message
             # ...
             
     except WebSocketDisconnect:
-        # Manejar desconexión
+        # Handle disconnection
         # ...`}
             </pre>
           </div>
@@ -118,24 +118,24 @@ async def websocket_endpoint(
       </div>
 
       <div className="mt-5 sm:mt-6">
-        <h3 className="text-[--violet-9] text-base sm:text-lg font-bold mb-2 sm:mb-3">Funcionalidades Principales</h3>
+        <h3 className="text-[--violet-9] text-base sm:text-lg font-bold mb-2 sm:mb-3">Main Features</h3>
         <ul className="list-disc pl-5 text-[#9dabb8] space-y-1 sm:space-y-2 text-sm">
-          <li><strong>Gestión de eventos:</strong> Sistema completo para creación, programación y seguimiento de clases y actividades.</li>
-          <li><strong>Relaciones entrenador-miembro:</strong> Estructura para asignar miembros a entrenadores y gestionar sus relaciones.</li>
-          <li><strong>Chat en tiempo real:</strong> Comunicación directa entre usuarios y salas de chat específicas para eventos.</li>
-          <li><strong>Control de participación:</strong> Registro, confirmación y seguimiento de asistencia a eventos con soporte para listas de espera.</li>
-          <li><strong>Autenticación con Auth0:</strong> Integración segura con sistema de identidad externo para gestión de usuarios.</li>
+          <li><strong>Event management:</strong> Complete system for creation, scheduling and tracking of classes and activities.</li>
+          <li><strong>Trainer-member relationships:</strong> Structure for assigning members to trainers and managing their relationships.</li>
+          <li><strong>Real-time chat:</strong> Direct communication between users and specific chat rooms for events.</li>
+          <li><strong>Participation control:</strong> Registration, confirmation and attendance tracking for events with waitlist support.</li>
+          <li><strong>Auth0 authentication:</strong> Secure integration with external identity system for user management.</li>
         </ul>
       </div>
       <div className="mt-5 sm:mt-6">
-        <h3 className="text-[--violet-9] text-base sm:text-lg font-bold mb-2 sm:mb-3">Técnicas Avanzadas</h3>
+        <h3 className="text-[--violet-9] text-base sm:text-lg font-bold mb-2 sm:mb-3">Advanced Techniques</h3>
         <div className="bg-[#0D1117] p-3 sm:p-4 rounded-md">
           <ul className="list-disc pl-5 text-[#9dabb8] space-y-1 sm:space-y-2 text-sm">
-            <li><strong>API asíncrona:</strong> Uso de async/await para operaciones no bloqueantes y mejor rendimiento en endpoints concurridos.</li>
-            <li><strong>Capas de abstracción:</strong> Separación clara entre repositorios, servicios y controladores para mantener un código organizado.</li>
-            <li><strong>Enumeraciones tipadas:</strong> Uso de enum para garantizar la integridad de datos de estados y evitar valores inválidos.</li>
-            <li><strong>Validación multinivel:</strong> Sistema de verificaciones en cascada para asegurar que las relaciones entre entidades son válidas.</li>
-            <li><strong>Modelos relacionales:</strong> Implementación robusta de relaciones entre entidades utilizando SQLAlchemy con cascade deletes.</li>
+            <li><strong>Asynchronous API:</strong> Use of async/await for non-blocking operations and better performance on concurrent endpoints.</li>
+            <li><strong>Abstraction layers:</strong> Clear separation between repositories, services and controllers to maintain organized code.</li>
+            <li><strong>Typed enumerations:</strong> Use of enum to ensure data integrity of states and prevent invalid values.</li>
+            <li><strong>Multi-level validation:</strong> Cascade verification system to ensure relationships between entities are valid.</li>
+            <li><strong>Relational models:</strong> Robust implementation of entity relationships using SQLAlchemy with cascade deletes.</li>
           </ul>
         </div>
       </div>
