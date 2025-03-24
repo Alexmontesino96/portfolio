@@ -114,7 +114,7 @@ function Home() {
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="mr-2">
                         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                       </svg>
-                      <span className="truncate">Conectar</span>
+                      <span className="truncate">Connect</span>
                     </a>
                     
                     <a 
@@ -139,7 +139,7 @@ function Home() {
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="mr-2 w-4 h-4">
                     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                   </svg>
-                  <span className="truncate">Conectar</span>
+                  <span className="truncate">Connect</span>
                 </a>
                 
                 <a 
@@ -200,7 +200,7 @@ function Home() {
               ></div>
               <div>
                 <p className="text-white text-lg font-semibold leading-tight mb-2 group-hover:text-[--violet-9] transition-colors">Financial Family Telegram Bot</p>
-                <p className="text-[#9dabb8] text-sm leading-normal">Bot de Telegram para gestión financiera familiar con interacción conversacional.</p>
+                <p className="text-[#9dabb8] text-sm leading-normal">Telegram bot for family financial management with conversational interaction.</p>
               </div>
             </Link>
           </div>
@@ -263,7 +263,7 @@ function Home() {
           <h2 className="text-white text-[28px] font-bold leading-tight tracking-[-0.015em] px-6 pb-6 pt-10 border-b border-[#293038] mb-8">Other Projects</h2>
           <div className="px-6 pt-3 mb-4">
             <Link to="/projects" className="text-[--violet-9] hover:text-[--violet-10] transition-colors text-sm flex items-center">
-              <span>Ver todos los proyectos</span>
+              <span>View all projects</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" className="ml-1">
                 <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
               </svg>
@@ -330,7 +330,7 @@ function Home() {
                 <span>GitHub</span>
               </a>
               <Link to="/contact" className="flex items-center justify-center rounded-xl h-12 px-6 bg-gradient-to-b from-[--violet-9] to-[--violet-9] hover:to-[--violet-10] text-white font-medium transition-all border-t border-[rgba(255,255,255,0.21)]">
-                Contactar
+                Contact
               </Link>
             </div>
           </div>
