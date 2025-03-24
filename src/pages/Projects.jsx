@@ -13,8 +13,8 @@ function Projects() {
       'cantina-go': {
         title: 'Cantina Go',
         image: '/cantina_go.webp',
-        shortDescription: 'Plataforma de gestión de servicios de restauración con arquitectura de microservicios.',
-        technologies: ['Python', 'FastAPI', 'PostgreSQL', 'Auth0', 'Docker', 'Microservicios'],
+        shortDescription: 'Restaurant service management platform with microservices architecture.',
+        technologies: ['Python', 'FastAPI', 'PostgreSQL', 'Auth0', 'Docker', 'Microservices'],
         github: 'https://github.com/Alexmontesino96/CantinaGo',
       },
       'supplies-order-predict': {
@@ -41,7 +41,7 @@ function Projects() {
       'financial-family-telegram-bot': {
         title: 'Financial Family Telegram Bot',
         image: '/telegra_bot_financial_family.webp',
-        shortDescription: 'Bot de Telegram para gestión financiera familiar con interacción conversacional.',
+        shortDescription: 'Telegram bot for family financial management with conversational interaction.',
         technologies: ['Python', 'aiogram', 'SQLAlchemy', 'Pandas', 'matplotlib', 'Docker'],
         github: 'https://github.com/Alexmontesino96/FinancialFamilyTelegramBot',
         telegramBot: 'https://t.me/family_financial_econ_bot',
@@ -71,22 +71,22 @@ function Projects() {
     <div className="px-4 sm:px-6 md:px-10 lg:px-20 xl:px-40 flex flex-1 justify-center py-10">
       <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
         <h1 className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} text-[32px] font-bold leading-tight tracking-[-0.015em] mb-8`}>
-          Proyectos
+          Projects
         </h1>
         
         {/* Introducción */}
         <div className={`${isDarkMode ? 'bg-[#161B22] border border-[#293038]' : 'bg-[#f0f0f0] border border-[#e0e0e0]'} rounded-xl p-6 mb-10`}>
           <p className={`${isDarkMode ? 'text-[#9dabb8]' : 'text-[#666]'} text-base`}>
-            Cada uno de estos proyectos representa mi experiencia en el desarrollo backend y APIs. 
-            He seleccionado estas aplicaciones para mostrar mis habilidades en diferentes tecnologías 
-            y arquitecturas, desde microservicios hasta APIs RESTful y bots de mensajería.
+            Each of these projects showcases my experience in backend development and APIs. 
+            I've selected these applications to demonstrate my skills in different technologies 
+            and architectures, from microservices to RESTful APIs and messaging bots.
           </p>
         </div>
         
         {/* Filtros */}
         <div className="mb-8 flex flex-wrap gap-3">
           <button className={`px-4 py-2 rounded-lg text-sm font-medium bg-gradient-to-b from-[--violet-9] to-[--violet-9] hover:to-[--violet-10] text-white transition-all border-t border-[rgba(255,255,255,0.21)]`}>
-            Todos
+            All
           </button>
           <button className={`px-4 py-2 rounded-lg text-sm font-medium ${isDarkMode ? 'bg-[#293038] text-white hover:bg-[--violet-9]' : 'bg-[#e0e0e0] text-[#111418] hover:bg-[--violet-9] hover:text-white'} transition-colors`}>
             API
@@ -95,7 +95,7 @@ function Projects() {
             Python
           </button>
           <button className={`px-4 py-2 rounded-lg text-sm font-medium ${isDarkMode ? 'bg-[#293038] text-white hover:bg-[--violet-9]' : 'bg-[#e0e0e0] text-[#111418] hover:bg-[--violet-9] hover:text-white'} transition-colors`}>
-            Base de datos
+            Database
           </button>
         </div>
         
@@ -148,7 +148,7 @@ function Projects() {
                       className="flex items-center justify-center rounded-xl h-10 px-4 bg-gradient-to-b from-[--violet-9] to-[--violet-9] hover:to-[--violet-10] text-white text-sm font-medium transition-all border-t border-[rgba(255,255,255,0.21)] flex-1"
                       onClick={(e) => e.stopPropagation()}
                     >
-                      Ver detalle
+                      View details
                     </Link>
                   ) : (
                     <a 
@@ -158,7 +158,7 @@ function Projects() {
                       className="flex items-center justify-center rounded-xl h-10 px-4 bg-gradient-to-b from-[--violet-9] to-[--violet-9] hover:to-[--violet-10] text-white text-sm font-medium transition-all border-t border-[rgba(255,255,255,0.21)] flex-1"
                       onClick={(e) => e.stopPropagation()}
                     >
-                      Ver en GitHub
+                      View on GitHub
                     </a>
                   )}
                   <a 
@@ -181,14 +181,14 @@ function Projects() {
         {/* CTA */}
         <div className={`${isDarkMode ? 'bg-[#161B22] border border-[#293038]' : 'bg-[#f0f0f0] border border-[#e0e0e0]'} rounded-xl p-6 text-center mb-6`}>
           <h2 className={`${isDarkMode ? 'text-white' : 'text-[#111418]'} text-xl font-bold mb-4`}>
-            ¿Interesado en colaborar en un proyecto?
+            Interested in collaborating on a project?
           </h2>
           <p className={`${isDarkMode ? 'text-[#9dabb8]' : 'text-[#666]'} mb-6 max-w-lg mx-auto`}>
-            Si tienes alguna idea o proyecto en mente, estaré encantado de discutirlo contigo.
-            Mi experiencia en desarrollo backend y APIs puede ayudarte a convertir tu idea en realidad.
+            If you have any idea or project in mind, I'd be happy to discuss it with you.
+            My experience in backend development and APIs can help you turn your idea into reality.
           </p>
           <Link to="/contact" className="inline-flex items-center justify-center rounded-xl h-12 px-6 bg-gradient-to-b from-[--violet-9] to-[--violet-9] hover:to-[--violet-10] text-white font-medium transition-all border-t border-[rgba(255,255,255,0.21)]">
-            Contactar
+            Contact
           </Link>
         </div>
       </div>
