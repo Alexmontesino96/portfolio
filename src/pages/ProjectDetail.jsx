@@ -10,21 +10,21 @@ const projectsData = {
   'cantina-go': {
     title: 'Cantina Go',
     image: '/cantina_go.webp',
-    shortDescription: 'Plataforma de gestión de servicios de restauración con arquitectura de microservicios.',
-    description: 'CantinaGo es una plataforma para gestión de servicios de restauración que permite a chefs ofrecer sus comidas y a clientes realizar pedidos. El proyecto ha migrado de una arquitectura monolítica a una arquitectura de microservicios para mejorar la escalabilidad, mantenibilidad y resiliencia del sistema.',
-    technologies: ['Python', 'FastAPI', 'PostgreSQL', 'Auth0', 'Docker', 'Microservicios', 'Streamlit', 'SQLAlchemy', 'Pydantic', 'OpenAI API'],
+    shortDescription: 'Restaurant service management platform with microservices architecture.',
+    description: 'CantinaGo is a restaurant service management platform that allows chefs to offer their meals and customers to place orders. The project has migrated from a monolithic architecture to a microservices architecture to improve scalability, maintainability, and resilience of the system.',
+    technologies: ['Python', 'FastAPI', 'PostgreSQL', 'Auth0', 'Docker', 'Microservices', 'Streamlit', 'SQLAlchemy', 'Pydantic', 'OpenAI API'],
     features: [
-      { title: 'Arquitectura de Microservicios', description: 'Separación clara de responsabilidades con 6 microservicios independientes.' },
-      { title: 'API Gateway', description: 'Punto de entrada único que enruta peticiones a los servicios correspondientes.' },
-      { title: 'Autenticación y Autorización', description: 'Integración con Auth0 para gestión de acceso seguro.' },
-      { title: 'Base de Datos por Servicio', description: 'Cada microservicio tiene su propia base de datos para garantizar la independencia.' },
-      { title: 'Integración con IA', description: 'Servicio de comidas utiliza OpenAI para enriquecer la experiencia del usuario.' },
+      { title: 'Microservices Architecture', description: 'Clear separation of responsibilities with 6 independent microservices.' },
+      { title: 'API Gateway', description: 'Single entry point that routes requests to the corresponding services.' },
+      { title: 'Authentication and Authorization', description: 'Integration with Auth0 for secure access management.' },
+      { title: 'Database per Service', description: 'Each microservice has its own database to ensure independence.' },
+      { title: 'AI Integration', description: 'Meal service uses OpenAI to enhance the user experience.' },
     ],
-    architecture: 'Arquitectura basada en microservicios con 6 componentes independientes: API Gateway como punto de entrada que enruta peticiones, y 5 servicios específicos (Autenticación, Cliente, Chef, Orden y Comida). Cada servicio tiene su propia base de datos PostgreSQL para garantizar el bajo acoplamiento. La comunicación entre servicios se realiza mediante HTTP usando httpx. Todo está containerizado con Docker y orquestado con Docker Compose para facilitar el despliegue.',
+    architecture: 'Architecture based on microservices with 6 independent components: API Gateway as an entry point that routes requests, and 5 specific services (Authentication, Customer, Chef, Order, and Meal). Each service has its own PostgreSQL database to ensure low coupling. Communication between services is done via HTTP using httpx. Everything is containerized with Docker and orchestrated with Docker Compose for easy deployment.',
     github: 'https://github.com/Alexmontesino96/CantinaGo',
     useCustomComponent: false,
     codeExamples: {
-      title: 'Middleware de Proxy en API Gateway',
+      title: 'Proxy Middleware in API Gateway',
       code: `@app.middleware("http")
 async def proxy_middleware(request: Request, call_next):
     path = request.url.path
@@ -80,20 +80,20 @@ async def proxy_middleware(request: Request, call_next):
     title: 'Supplies Order Predict',
     image: '/order_predict.webp',
     shortDescription: 'Inventory management and statistical analysis system using FastAPI, with order prediction and automation capabilities.',
-    description: 'Sistema diseñado para automatizar y optimizar la gestión de inventario y procesamiento de pedidos, incorporando análisis estadístico para mejorar la toma de decisiones en una cadena minorista. Desarrollado con FastAPI, integra funcionalidades avanzadas que facilitan actualizaciones automáticas de inventario, gestión de pedidos y autenticación segura mediante Auth0.',
+    description: 'System designed to automate and optimize inventory management and order processing, incorporating statistical analysis to improve decision-making in a retail chain. Developed with FastAPI, it integrates advanced features that facilitate automatic inventory updates, order management, and secure authentication using Auth0.',
     technologies: ['Python 3.8+', 'FastAPI', 'SQLAlchemy', 'Pandas', 'Auth0', 'CSV Processing', 'RESTful API', 'PostgreSQL', 'uvicorn', 'Pydantic'],
     features: [
-      { title: 'Gestión de pedidos', description: 'Soporte completo para buscar, añadir, eliminar e importar pedidos desde archivos CSV.' },
-      { title: 'Gestión de productos', description: 'Incluye importación de listas de productos y actualización de precios de forma eficiente.' },
-      { title: 'Análisis estadístico', description: 'Utiliza datos históricos para generar estadísticas sobre la demanda de productos.' },
-      { title: 'Autenticación segura', description: 'Implementa Auth0 para la gestión de usuarios y control de acceso a funcionalidades protegidas.' },
-      { title: 'Interfaz intuitiva', description: 'Diseñada para facilitar las operaciones diarias de los usuarios finales con documentación automática.' },
+      { title: 'Order Management', description: 'Full support for searching, adding, removing, and importing orders from CSV files.' },
+      { title: 'Product Management', description: 'Includes importing product lists and efficiently updating prices.' },
+      { title: 'Statistical Analysis', description: 'Uses historical data to generate statistics on product demand.' },
+      { title: 'Secure Authentication', description: 'Implements Auth0 for user management and access control to protected features.' },
+      { title: 'Intuitive Interface', description: 'Designed to facilitate daily operations for end users with automatic documentation.' },
     ],
-    architecture: 'API RESTful construida con FastAPI que proporciona endpoints para gestión de pedidos, productos e inventario. SQLAlchemy como ORM para manipulación y consulta de bases de datos. Integración con Auth0 para manejo de autenticación y autorización. Procesamiento de datos con Pandas para análisis estadístico y generación de reportes.',
+    architecture: 'RESTful API built with FastAPI that provides endpoints for managing orders, products, and inventory. SQLAlchemy as ORM for database manipulation and querying. Integration with Auth0 for authentication and authorization handling. Data processing with Pandas for statistical analysis and report generation.',
     github: 'https://github.com/Alexmontesino96/Supplies-Order-Predict',
     useCustomComponent: true,
     codeExamples: {
-      title: 'Servicio de procesamiento de pedidos',
+      title: 'Order Processing Service',
       code: `class Order_Service:
     def __init__(self, db_session):
         self.db_session = db_session
@@ -198,20 +198,20 @@ async def proxy_middleware(request: Request, call_next):
     title: 'Financial Family API',
     image: '/family_financial_api_photo.webp',
     shortDescription: 'Family finance platform with transaction management and expense analysis.',
-    description: 'API para gestión financiera familiar construida con FastAPI. Permite a los miembros de una familia registrar gastos, realizar pagos entre personas, calcular balances y deudas, y obtener reportes detallados. Implementa una arquitectura en capas con sistema de autenticación basado en JWT y almacenamiento en PostgreSQL.',
+    description: 'Family financial management API built with FastAPI. Allows family members to record expenses, make payments between people, calculate balances and debts, and obtain detailed reports. Implements a layered architecture with JWT-based authentication system and PostgreSQL storage.',
     technologies: ['Python 3.8+', 'FastAPI', 'PostgreSQL 12+', 'SQLAlchemy', 'Pydantic', 'JWT', 'Docker', 'Pytest', 'Alembic', 'SQLite'],
     features: [
-      { title: 'Gestión de familias', description: 'Creación y administración de grupos familiares con múltiples miembros, cada uno identificado por su ID de Telegram.' },
-      { title: 'Registro de gastos compartidos', description: 'Sistema para registrar gastos y dividirlos entre miembros específicos de la familia o entre todos.' },
-      { title: 'Cálculo inteligente de balances', description: 'Algoritmo de neteo de deudas que simplifica las transacciones entre miembros y previene errores de cálculo.' },
-      { title: 'Sistema de pagos', description: 'Registro de pagos entre miembros con verificación de consistencia para mantener la integridad de los datos financieros.' },
-      { title: 'API RESTful completa', description: 'Endpoints documentados con OpenAPI para familias, miembros, gastos y pagos, con autenticación segura mediante tokens JWT.' },
+      { title: 'Family Management', description: 'Creation and administration of family groups with multiple members, each identified by their Telegram ID.' },
+      { title: 'Shared Expenses Recording', description: 'System for recording expenses and dividing them among specific family members or among all.' },
+      { title: 'Smart Balance Calculation', description: 'Debt netting algorithm that simplifies transactions between members and prevents calculation errors.' },
+      { title: 'Payment System', description: 'Recording of payments between members with consistency verification to maintain the integrity of financial data.' },
+      { title: 'Complete RESTful API', description: 'Endpoints documented with OpenAPI for families, members, expenses and payments, with secure authentication using JWT tokens.' },
     ],
-    architecture: 'Arquitectura de capas con: (1) Capa de API implementada con FastAPI para manejar las solicitudes HTTP, (2) Capa de Servicios que contiene la lógica de negocio principal, (3) Capa de Modelos que define las entidades y su representación en la base de datos, y (4) Capa de Persistencia que gestiona la interacción con PostgreSQL mediante SQLAlchemy. Seguridad implementada con autenticación JWT.',
+    architecture: 'Layered architecture with: (1) API Layer implemented with FastAPI to handle HTTP requests, (2) Service Layer containing the main business logic, (3) Model Layer that defines entities and their representation in the database, and (4) Persistence Layer that manages interaction with PostgreSQL through SQLAlchemy. Security implemented with JWT authentication.',
     github: 'https://github.com/Alexmontesino96/FinancialFamilyAPI',
     useCustomComponent: true,
     codeExamples: {
-      title: 'Algoritmo de detección de anomalías',
+      title: 'Anomaly Detection Algorithm',
       code: `class TransactionAnomalyDetector:
     def __init__(self, db_session):
         self.db = db_session
@@ -286,20 +286,20 @@ async def proxy_middleware(request: Request, call_next):
     title: 'GymAPI',
     image: '/gym_api_photo.webp',
     shortDescription: 'Robust API for gym management with membership and access control.',
-    description: 'Sistema de gestión integral para gimnasios desarrollado con arquitectura de microservicios en Python. Utiliza MongoDB como base de datos principal, Redis para caché y WebSockets para actualizaciones en tiempo real. Incluye control de acceso biométrico, gestión de membresías, reservas y seguimiento de progreso.',
+    description: 'Comprehensive management system for gyms developed with microservices architecture in Python. Uses MongoDB as the main database, Redis for cache, and WebSockets for real-time updates. Includes biometric access control, membership management, reservations, and progress tracking.',
     technologies: ['Python', 'Flask', 'MongoDB', 'Redis', 'WebSocket', 'JWT', 'Docker', 'RabbitMQ', 'Stripe API', 'QR Code', 'Nginx'],
     features: [
-      { title: 'Control de acceso biométrico', description: 'Sistema avanzado de validación de acceso mediante QR y reconocimiento facial opcional.' },
-      { title: 'Gestión de membresías y pagos', description: 'Diferentes tipos de planes con facturación recurrente integrada con Stripe y recordatorios automatizados.' },
-      { title: 'Reserva de clases y espacios', description: 'Sistema interactivo para reservas con límites de aforo y cancelaciones automáticas.' },
-      { title: 'Seguimiento de progreso', description: 'Registro de entrenamientos, métricas corporales y objetivos personalizados.' },
-      { title: 'Analítica de uso', description: 'Dashboard con métricas de asistencia, ocupación y retención de clientes.' },
+      { title: 'Biometric Access Control', description: 'Advanced access validation system using QR and optional facial recognition.' },
+      { title: 'Membership and Payment Management', description: 'Different types of plans with recurring billing integrated with Stripe and automated reminders.' },
+      { title: 'Class and Space Reservation', description: 'Interactive system for reservations with capacity limits and automatic cancellations.' },
+      { title: 'Progress Tracking', description: 'Recording of workouts, body metrics, and personalized goals.' },
+      { title: 'Usage Analytics', description: 'Dashboard with attendance, occupancy, and customer retention metrics.' },
     ],
-    architecture: 'Arquitectura distribuida con múltiples microservicios conectados mediante mensajería asíncrona con RabbitMQ. MongoDB como base de datos principal, Redis para caché y sesiones. Autenticación mediante JWT con rotación de tokens. WebSockets para actualizaciones en tiempo real y notificaciones push.',
+    architecture: 'Distributed architecture with multiple microservices connected through asynchronous messaging with RabbitMQ. MongoDB as the main database, Redis for cache and sessions. Authentication using JWT with token rotation. WebSockets for real-time updates and push notifications.',
     github: 'https://github.com/Alexmontesino96/GymAPI',
     useCustomComponent: true,
     codeExamples: {
-      title: 'Sistema de recomendación de entrenamientos',
+      title: 'Workout Recommendation System',
       code: `from typing import List, Dict, Any, Optional, Union
 import numpy as np
 from datetime import datetime, timedelta
@@ -506,35 +506,35 @@ class WorkoutRecommendationEngine:
     title: 'Financial Family Telegram Bot',
     image: '/telegra_bot_financial_family.webp',
     shortDescription: 'Telegram bot for managing family finances with transaction tracking and expense analysis.',
-    description: 'Bot de Telegram para gestión financiera familiar que permite a los miembros registrar transacciones, dividir gastos compartidos, establecer presupuestos y visualizar reportes. Integrado con Financial Family API para sincronización de datos.',
+    description: 'Telegram bot for family financial management that allows members to record transactions, split shared expenses, set budgets, and view reports. Integrated with Financial Family API for data synchronization.',
     technologies: ['Python', 'aiogram', 'SQLAlchemy', 'Pandas', 'matplotlib', 'Redis', 'PIL', 'qrcode', 'pydantic', 'Docker'],
     features: [
-      { title: 'Creación de familias', description: 'Sistema para crear y gestionar grupos familiares con códigos QR de invitación para nuevos miembros.' },
-      { title: 'Registro de gastos', description: 'Interfaz conversacional para registrar gastos individuales o compartidos entre miembros de la familia.' },
-      { title: 'División de gastos', description: 'Algoritmo para dividir gastos equitativamente o con porcentajes personalizados entre miembros.' },
-      { title: 'Notificaciones', description: 'Sistema de alertas para recordatorios de pagos pendientes y resúmenes periódicos.' },
-      { title: 'Estadísticas visuales', description: 'Generación de gráficos y reportes estadísticos sobre patrones de gasto.' },
+      { title: 'Family Creation', description: 'System to create and manage family groups with QR invitation codes for new members.' },
+      { title: 'Expense Recording', description: 'Conversational interface for recording individual or shared expenses among family members.' },
+      { title: 'Expense Splitting', description: 'Algorithm to split expenses equally or with custom percentages among members.' },
+      { title: 'Notifications', description: 'Alert system for pending payment reminders and periodic summaries.' },
+      { title: 'Visual Statistics', description: 'Generation of graphs and statistical reports on spending patterns.' },
     ],
-    architecture: 'Arquitectura basada en handlers y servicios usando aiogram para la interacción con la API de Telegram. Sistema de plantillas para generación de mensajes dinámicos. Base de datos PostgreSQL con SQLAlchemy como ORM. Módulos separados para procesamiento de comandos, interacción con API externa y generación de reportes gráficos.',
+    architecture: 'Architecture based on handlers and services using aiogram for interaction with the Telegram API. Template system for generating dynamic messages. PostgreSQL database with SQLAlchemy as ORM. Separate modules for command processing, interaction with external API, and graphical report generation.',
     github: 'https://github.com/Alexmontesino96/FinancialFamilyTelegramBot',
     githubRepo: 'Alexmontesino96/FinancialFamilyTelegramBot',
     telegramBot: 'https://t.me/family_financial_econ_bot',
     useCustomComponent: true,
     codeExamples: {
-      title: 'Ver código en GitHub',
-      code: `# El código fuente completo está disponible en GitHub:
+      title: 'View code on GitHub',
+      code: `# The complete source code is available on GitHub:
 # https://github.com/Alexmontesino96/FinancialFamilyTelegramBot
       
-# Funcionalidades destacadas del bot:
+# Bot key features:
 # ----------------------------------------------------
-# 1. Registro de pagos entre miembros familiares
-# 2. Visualización de balances y deudas entre miembros
-# 3. Sistema de gestión de gastos compartidos
-# 4. Reportes y notificaciones automáticas
-# 5. Gestión de categorías y presupuestos
+# 1. Payment recording between family members
+# 2. Balance and debt visualization between members
+# 3. Shared expense management system
+# 4. Automatic reports and notifications
+# 5. Categories and budget management
 
-# Para ver el código completo, visita el repositorio en GitHub
-# o prueba el bot directamente en Telegram: @family_financial_econ_bot`
+# To see the complete code, visit the GitHub repository
+# or try the bot directly on Telegram: @family_financial_econ_bot`
     }
   }
 };
@@ -556,11 +556,11 @@ function ProjectDetail() {
     return (
       <div className="px-10 md:px-20 lg:px-40 flex flex-1 justify-center py-10">
         <div className="layout-content-container flex flex-col max-w-[960px] flex-1 items-center justify-center">
-          <h2 className="text-white text-[28px] font-bold leading-tight tracking-[-0.015em] mb-6">Proyecto no encontrado</h2>
-          <p className="text-[#9dabb8] text-base mb-8">El proyecto que estás buscando no existe o ha sido eliminado.</p>
+          <h2 className="text-white text-[28px] font-bold leading-tight tracking-[-0.015em] mb-6">Project not found</h2>
+          <p className="text-[#9dabb8] text-base mb-8">The project you are looking for does not exist or has been removed.</p>
           <div className="mb-6 text-center sm:text-left">
             <Link to="/" className="flex items-center justify-center rounded-xl h-12 px-6 bg-gradient-to-b from-[--violet-9] to-[--violet-9] hover:to-[--violet-10] text-white font-medium transition-all border-t border-[rgba(255,255,255,0.21)]">
-              Volver al inicio
+              Back to home
             </Link>
           </div>
         </div>
@@ -577,7 +577,7 @@ function ProjectDetail() {
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256" className="mr-2">
               <path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
             </svg>
-            Volver a proyectos
+            Back to projects
           </Link>
         </div>
         
@@ -598,7 +598,7 @@ function ProjectDetail() {
             {/* Tecnologías utilizadas - movidas aquí arriba */}
             <div className="mb-6 sm:mb-8">
               <h2 className="text-white text-xl md:text-2xl font-bold leading-tight tracking-[-0.015em] pb-2 sm:pb-3 mb-3 sm:mb-4 border-b border-[#293038]">
-                Tecnologías
+                Technologies
               </h2>
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech, index) => (
@@ -622,7 +622,7 @@ function ProjectDetail() {
         {/* Características del proyecto */}
         <div className="mb-6 sm:mb-8 md:mb-10">
           <h2 className="text-white text-xl sm:text-2xl font-bold leading-tight tracking-[-0.015em] pb-2 sm:pb-4 border-b border-[#293038] mb-4 sm:mb-6">
-            Características principales
+            Main Features
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-6">
             {project.features.map((feature, index) => (
@@ -641,7 +641,7 @@ function ProjectDetail() {
         {/* Arquitectura */}
         <div className="mb-6 sm:mb-8 md:mb-10">
           <h2 className="text-white text-xl sm:text-2xl font-bold leading-tight tracking-[-0.015em] pb-2 sm:pb-4 border-b border-[#293038] mb-4 sm:mb-6">
-            Arquitectura
+            Architecture
           </h2>
           <div className="bg-[#161B22] rounded-xl p-3 sm:p-4 md:p-6 shadow-md border border-[#293038]">
             <p className="text-[#9dabb8] text-xs sm:text-sm md:text-base">
@@ -653,7 +653,7 @@ function ProjectDetail() {
         {/* Código ejemplo destacado */}
         <div className="mb-6 sm:mb-8 md:mb-10">
           <h2 className="text-white text-xl sm:text-2xl font-bold leading-tight tracking-[-0.015em] pb-2 sm:pb-4 border-b border-[#293038] mb-4 sm:mb-6">
-            Código destacado
+            Featured Code
           </h2>
           
           <div className="overflow-hidden">
@@ -670,7 +670,7 @@ function ProjectDetail() {
                   <>
                     <div className="bg-[#0D1117] px-4 sm:px-6 py-3 border-b border-[#293038]">
                       <p className="text-white text-sm sm:text-base md:text-lg font-medium">
-                        {project.codeExamples.title || 'Código Destacado'}
+                        {project.codeExamples.title || 'Featured Code'}
                       </p>
                     </div>
                     <pre className="p-3 sm:p-4 md:p-6 overflow-x-auto text-[#9dabb8] text-xs sm:text-sm">
@@ -686,10 +686,10 @@ function ProjectDetail() {
         {/* Llamada a la acción */}
         <div className="flex flex-col items-center justify-center px-3 sm:px-6 py-6 sm:py-8 md:py-10 bg-[#161B22] rounded-xl mb-6 border border-[#293038]">
           <h2 className="text-white text-lg sm:text-xl md:text-2xl font-bold leading-tight tracking-[-0.015em] mb-3 sm:mb-4 text-center">
-            ¿Interesado en este proyecto?
+            Interested in this project?
           </h2>
           <p className="text-[#9dabb8] text-xs sm:text-sm text-center max-w-lg mb-4 sm:mb-6">
-            Si quieres saber más sobre este proyecto o tienes alguna pregunta, no dudes en contactarme.
+            If you want to know more about this project or have any questions, don't hesitate to contact me.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-10">
             {project.telegramBot && (
@@ -699,7 +699,7 @@ function ProjectDetail() {
                 rel="noopener noreferrer" 
                 className="flex items-center justify-center rounded-xl h-10 px-4 sm:px-6 bg-[#293038] text-white text-sm font-medium transition-colors hover:bg-[--violet-9] w-full sm:w-auto"
               >
-                <span>Probar en Telegram</span>
+                <span>Try on Telegram</span>
               </a>
             )}
             <a 
@@ -708,11 +708,11 @@ function ProjectDetail() {
               rel="noopener noreferrer" 
               className="flex items-center justify-center rounded-xl h-10 px-4 sm:px-6 bg-gradient-to-b from-[--violet-9] to-[--violet-9] hover:to-[--violet-10] text-white text-sm font-medium transition-all border-t border-[rgba(255,255,255,0.21)] w-full sm:w-auto"
             >
-              <span>Ver en GitHub</span>
+              <span>View on GitHub</span>
             </a>
             <a href="mailto:alex.montesino@example.com" 
               className="flex items-center justify-center rounded-xl h-10 px-4 sm:px-6 bg-gradient-to-b from-[--violet-9] to-[--violet-9] hover:to-[--violet-10] text-white text-sm font-medium transition-all border-t border-[rgba(255,255,255,0.21)] w-full sm:w-auto">
-              <span>Contactar</span>
+              <span>Contact</span>
             </a>
           </div>
         </div>
